@@ -1,34 +1,58 @@
-// import { useEffect } from "react";
-// import { useLocation, useNavigationType } from "react-router-dom";
+import { useEffect } from "react";
+import { useLocation, useNavigationType } from "react-router-dom";
 
-// const ScrollToTop = () => {
-//   const { pathname } = useLocation();
-//   const navigationType = useNavigationType(); // "POP" | "PUSH" | "REPLACE"
+const SCROLL_POSITIONS_KEY = "scrollPositions";
 
-//   useEffect(() => {
-//     // نتجاهل تماماً التنقل عن طريق زر العودة أو التقدم
-//     if (navigationType === "POP") {
-//       return;
-//     }
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  const navigationType = useNavigationType();
 
-//     // إذا كان المسار يبدأ بـ /products، ننتقل إلى قائمة المنتجات
-//     if (pathname.startsWith("/products")) {
-//       const timer = setTimeout(() => {
-//         const target = document.getElementById("all-products");
-//         if (target) {
-//           target.scrollIntoView({ behavior: "smooth", block: "start" });
-//         } else {
-//           window.scrollTo(0, 0);
-//         }
-//       }, 200);
-//       return () => clearTimeout(timer);
-//     }
+  useEffect(() => {
+    if (navigationType === "POP") {
+      // استعادة آخر موضع تمرير عند الرجوع
+      const saved = sessionStorage.getItem(SCROLL_POSITIONS_KEY);
+      if (saved) {
+        const positions = JSON.parse(saved);
+        if (positions[pathname] !== undefined) {
+          requestAnimationFrame(() => {
+            window.scrollTo(0, positions[pathname]);
+          });
+        }
+      }
+    } else {
+      // سلوك التنقل العادي (إما للأعلى أو لقسم المنتجات)
+      if (pathname.startsWith("/products")) {
+        const timer = setTimeout(() => {
+          const target = document.getElementById("all-products");
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          } else {
+            window.scrollTo(0, 0);
+          }
+        }, 200);
+        return () => clearTimeout(timer);
+      } else {
+        window.scrollTo(0, 0);
+      }
+    }
+  }, [pathname, navigationType]);
 
-//     // لبقية الصفحات، تمرير عادي إلى الأعلى
-//     window.scrollTo(0, 0);
-//   }, [pathname, navigationType]);
+  useEffect(() => {
+    const savePosition = () => {
+      const saved = sessionStorage.getItem(SCROLL_POSITIONS_KEY);
+      const positions = saved ? JSON.parse(saved) : {};
+      positions[pathname] = window.scrollY;
+      sessionStorage.setItem(SCROLL_POSITIONS_KEY, JSON.stringify(positions));
+    };
 
-//   return null;
-// };
+    window.addEventListener("beforeunload", savePosition);
+    return () => {
+      savePosition();
+      window.removeEventListener("beforeunload", savePosition);
+    };
+  }, [pathname]);
 
-// export default ScrollToTop;
+  return null;
+};
+
+export default ScrollToTop;
