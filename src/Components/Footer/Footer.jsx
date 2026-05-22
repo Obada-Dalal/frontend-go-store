@@ -115,10 +115,9 @@ export default function Footer({ onSearchSelect }) {
             <i>
               <MdEmail />
             </i>
-            <div className="text">
-              {/* <p>Email Us</p> */}
+            {/* <div className="text">
               <span>SmartGearStore@gmail.com</span>
-            </div>
+            </div> */}
           </div>
         </div>
         {/*  sochials قسم  *** */}
@@ -179,7 +178,7 @@ export default function Footer({ onSearchSelect }) {
       </div>
 
       <div className="copywrite">
-        © 2026 <span>SmartGearStore</span>. All rights reserved.
+        © 2026 <span>GO STORE</span>. All rights reserved.
       </div>
     </>
   );
