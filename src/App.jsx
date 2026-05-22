@@ -6,7 +6,13 @@ import SigIN from "./Components/LogInAndSigIn/SignIn/SignIn";
 import Products from "./Components/Products/Products";
 import ProductDetails from "./Components/ProductDetails/ProductDetails";
 import { UserProvider } from "./useContexts/UserContext";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  ScrollRestoration
+} from "react-router-dom";
 import Cart from "./Components/Cart/Cart";
 import Search from "./Components/Search/Search";
 import Dashboard from "./Components/Dashboard/Dashboard";
@@ -20,7 +26,7 @@ import EditAdvertisement from "./Components/Dashboard/AdvertisementsList/EditAdv
 import UserOrders from "./Components/UserOrder/UserOrders";
 import OrdersManagemen from "./Components/Dashboard/OrdersManagemen/OrdersManagemen";
 import DiscountsPage from "./Components/Discounts/DiscountsPage";
-import ScrollToTop from "./Components/ScrollToTop";
+
 
 function App() {
   const [showScrollBtn, setShowScrollBtn] = useState(false);
@@ -44,7 +50,7 @@ function App() {
     <>
       <UserProvider>
         <Router>
-          <ScrollToTop />
+          <ScrollRestoration />
           <Routes>
             {/* المسارات الرئيسية */}
             <Route path="/" element={<Home />}>
