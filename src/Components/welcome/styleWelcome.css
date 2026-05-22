@@ -1,0 +1,408 @@
+/* ===== Welcome Page Styles - بألوان الـ Root ===== */
+
+.welcome {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, var(--color-dsi) 0%, #0f2a45 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeInWelcome 0.6s ease-in;
+  overflow: hidden;
+}
+
+/* ===== تأثير الدخول ===== */
+@keyframes fadeInWelcome {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ===== دوائر متحركة في الخلفية ===== */
+.welcome .background-circles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.welcome .background-circles span {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(50px);
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+/* دائرة 1 - اللون الأزرق الأساسي */
+.welcome .background-circles span:nth-child(1) {
+  width: 25vw;
+  height: 25vw;
+  background: var(--color-blue);
+  opacity: 0.5;
+  top: -5%;
+  left: -5%;
+  animation: floatWelcome 6s ease-in-out infinite;
+}
+
+/* دائرة 2 - اللون الأصفر */
+.welcome .background-circles span:nth-child(2) {
+  width: 20vw;
+  height: 20vw;
+  background: var(--color-yellow);
+  opacity: 0.4;
+  bottom: 10%;
+  left: 15%;
+  animation: floatWelcome 8s ease-in-out infinite 1s;
+}
+
+/* دائرة 3 - اللون الأزرق الداكن */
+.welcome .background-circles span:nth-child(3) {
+  width: 35vw;
+  height: 35vw;
+  background: var(--color-dsi);
+  opacity: 0.35;
+  top: 20%;
+  right: -10%;
+  animation: floatWelcome 7s ease-in-out infinite 2s;
+}
+
+/* دائرة 4 - اللون الأزرق الفاتح */
+.welcome .background-circles span:nth-child(4) {
+  width: 15vw;
+  height: 15vw;
+  background: #7ab3d1;
+  opacity: 0.4;
+  bottom: -5%;
+  right: 20%;
+  animation: floatWelcome 5s ease-in-out infinite 1.5s;
+}
+
+/* دائرة 5 - مزيج من الأزرق والأصفر */
+.welcome .background-circles span:nth-child(5) {
+  width: 22vw;
+  height: 22vw;
+  background: linear-gradient(135deg, var(--color-blue) 0%, var(--color-yellow) 100%);
+  opacity: 0.35;
+  top: 40%;
+  left: 35%;
+  animation: floatWelcome 9s ease-in-out infinite 3s;
+}
+
+@keyframes floatWelcome {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-30px) scale(1.05);
+  }
+}
+
+/* ===== حاوية الشعار ===== */
+.logo-welcome {
+  position: relative;
+  z-index: 10;
+  animation: bounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.logo-welcome img {
+  width: 200px;
+  height: auto;
+  /* border-radius: 20px; */
+  animation: pulse 2.5s ease-in-out infinite;
+  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.3));
+  /* border: 3px solid rgba(255, 255, 255, 0.2); */
+  /* box-shadow: 
+    0 20px 40px -10px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3); */
+}
+
+/* ===== تأثير القفز للشعار ===== */
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.3) rotate(-10deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.08) rotate(2deg);
+  }
+  70% {
+    transform: scale(0.95) rotate(-1deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+/* ===== تأثير النبض للشعار ===== */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.3));
+  }
+  50% {
+    transform: scale(1.05);
+    filter: drop-shadow(0 20px 40px rgba(95, 143, 169, 0.4));
+  }
+}
+
+/* ===== حاوية النص ===== */
+.text-welcome {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  color: var(--color-white);
+  margin-top: 40px;
+  animation: slideUp 0.8s ease-out 0.2s both;
+}
+
+/* ===== تأثير الصعود للنص ===== */
+@keyframes slideUp {
+  from {
+    transform: translateY(60px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ===== العنوان الرئيسي ===== */
+.text-welcome h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #ffffff 0%, #f0f4f8 50%, var(--color-yellow) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  display: inline-block;
+  padding: 0 10px;
+}
+
+/* ===== العنوان الثانوي ===== */
+.text-welcome h2 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  opacity: 0.95;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ===== خط متحرك أسفل النص ===== */
+.text-welcome::after {
+  content: '';
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--color-yellow), var(--color-blue), transparent);
+  border-radius: 4px;
+  animation: lineMove 2.5s ease-in-out infinite;
+}
+
+@keyframes lineMove {
+  0%, 100% {
+    width: 0;
+    opacity: 0;
+  }
+  50% {
+    width: 120px;
+    opacity: 1;
+  }
+}
+
+/* ===== تأثير خلفية إضافي ===== */
+.welcome .glow-effect {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(95, 143, 169, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: 5;
+  animation: glowPulse 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+/* ===== نقاط متحركة في الخلفية ===== */
+.welcome .dots-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle, rgba(245, 166, 35, 0.15) 2px, transparent 2px),
+    radial-gradient(circle, rgba(95, 143, 169, 0.1) 1px, transparent 1px);
+  background-size: 40px 40px, 20px 20px;
+  background-position: 0 0, 10px 10px;
+  animation: moveDots 25s linear infinite;
+  pointer-events: none;
+  z-index: 2;
+}
+
+@keyframes moveDots {
+  from {
+    background-position: 0 0, 10px 10px;
+  }
+  to {
+    background-position: 80px 80px, 90px 90px;
+  }
+}
+
+/* ===== منع التمرير أثناء ظهور الشاشة ===== */
+body.welcome-active {
+  overflow: hidden;
+}
+
+/* ===== تحسينات للشاشات المتوسطة ===== */
+@media (max-width: 992px) {
+  .text-welcome h1 {
+    font-size: 2.5rem;
+  }
+  
+  .text-welcome h2 {
+    font-size: 1.5rem;
+  }
+  
+  .logo-welcome img {
+    width: 160px;
+  }
+  
+  .welcome .glow-effect {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+/* ===== تحسينات للشاشات الصغيرة (الموبايل) ===== */
+@media (max-width: 768px) {
+  .text-welcome h1 {
+    font-size: 2rem;
+  }
+  
+  .text-welcome h2 {
+    font-size: 1.3rem;
+    padding: 0 20px;
+  }
+  
+  .logo-welcome img {
+    width: 130px;
+  }
+  
+  .text-welcome {
+    margin-top: 30px;
+  }
+  
+  .welcome .glow-effect {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .text-welcome::after {
+    bottom: -20px;
+  }
+  
+  @keyframes lineMove {
+    0%, 100% {
+      width: 0;
+      opacity: 0;
+    }
+    50% {
+      width: 80px;
+      opacity: 1;
+    }
+  }
+}
+
+/* ===== تحسينات للشاشات الصغيرة جداً ===== */
+@media (max-width: 480px) {
+  .text-welcome h1 {
+    font-size: 1.6rem;
+  }
+  
+  .text-welcome h2 {
+    font-size: 1.1rem;
+  }
+  
+  .logo-welcome img {
+    width: 100px;
+  }
+  
+  .welcome .background-circles span {
+    filter: blur(40px);
+  }
+  
+  .text-welcome {
+    margin-top: 25px;
+  }
+  
+  .welcome .glow-effect {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+/* ===== تحسينات للشاشات الصغيرة جداً جداً ===== */
+@media (max-width: 360px) {
+  .text-welcome h1 {
+    font-size: 1.4rem;
+  }
+  
+  .text-welcome h2 {
+    font-size: 1rem;
+  }
+  
+  .logo-welcome img {
+    width: 90px;
+  }
+}
+
+/* ===== تأثير ظهور تدريجي للإغلاق ===== */
+.welcome.fade-out {
+  animation: fadeOutWelcome 0.5s ease-out forwards;
+}
+
+@keyframes fadeOutWelcome {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}

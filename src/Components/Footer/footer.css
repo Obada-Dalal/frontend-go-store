@@ -1,0 +1,389 @@
+/* ========================================
+   الفوتر - Footer
+   تصميم احترافي مع نظام الألوان الجذر
+   ======================================== */
+
+/* ===== الفوتر الرئيسي ===== */
+.footer {
+  padding: 60px 20px 40px;
+  background-color: #111827;
+  color: #e5e7eb;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  border-top: 4px solid var(--color-blue);
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== العناوين في الفوتر ===== */
+.footer h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  position: relative;
+  color: var(--color-white);
+  padding-bottom: 12px;
+}
+
+/* .footer h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-blue), var(--color-yellow));
+  border-radius: 3px;
+} */
+
+/* ===== قسم About Us ===== */
+.about-us p {
+  line-height: 1.6;
+  margin: 15px 0;
+  font-size: 14px;
+  color: #9ca3af;
+}
+
+/* ========================================
+   أيقونات التواصل الاجتماعي - ألوان خاصة بكل تطبيق
+   ======================================== */
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  color: #9ca3af;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+/* ✅ Instagram - تدرج مميز */
+.social-icon.instagram:hover {
+  background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+  color: white;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 5px 15px rgba(214, 41, 118, 0.3);
+}
+
+/* ✅ Facebook */
+.social-icon.facebook:hover {
+  background: #1877f2;
+  color: white;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 5px 15px rgba(24, 119, 242, 0.3);
+}
+
+/* ✅ WhatsApp (اختياري) */
+.social-icon.whatsapp:hover {
+  background: #25d366;
+  color: white;
+  transform: translateY(-3px) scale(1.05);
+
+}
+
+/* ===== قسم معلومات التواصل (Box Sochials) ===== */
+.box-sochials .sochial {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.box-sochials .sochial:hover {
+  transform: translateX(5px);
+}
+
+.box-sochials .sochial i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(95, 143, 169, 0.15);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.box-sochials .sochial:hover i {
+  background: var(--color-blue);
+  box-shadow: var(--btn-shadow);
+}
+
+.box-sochials .sochial i svg {
+  font-size: 18px;
+  color: var(--color-yellow);
+  transition: all 0.3s ease;
+}
+
+.box-sochials .sochial:hover i svg {
+  color: var(--color-white);
+}
+
+.box-sochials .sochial .text p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #e5e7eb;
+}
+
+.box-sochials .sochial .text span {
+  font-size: 13px;
+  color: #9ca3af;
+  display: inline-block;
+  margin-top: 2px;
+}
+
+/* ===== قسم التصنيفات (Categories) ===== */
+.Categoriess .Categorie ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.Categoriess .Categorie ul li {
+  margin-bottom: 5px;
+  transition: all 0.3s ease;
+}
+
+.Categoriess .Categorie ul li:hover {
+  transform: translateX(3px);
+}
+
+.Categoriess .Categorie ul li a {
+  display: inline-block;
+  padding: 5px 12px;
+  text-decoration: none;
+  color: #e5e7eb;
+  font-size: 13px;
+  background: rgba(95, 143, 169, 0.12);
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.Categoriess .Categorie ul li a:hover {
+  background: linear-gradient(135deg, var(--color-blue), #4a7a94);
+  color: var(--color-white);
+  box-shadow: var(--btn-shadow);
+}
+
+/* ===== قسم الروابط السريعة (Quick Links) ===== */
+.quick-links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.quick-links ul li {
+  padding: 12px 0;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+}
+
+.quick-links ul li:last-child {
+  border-bottom: none;
+}
+
+.quick-links ul li:hover {
+  transform: translateX(5px);
+}
+
+.quick-links ul li svg {
+  color: var(--color-yellow);
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.quick-links ul li:hover svg {
+  transform: translateX(3px);
+  color: var(--color-blue);
+}
+
+.quick-links ul li a {
+  text-decoration: none;
+  color: #9ca3af;
+  transition: all 0.3s ease;
+}
+
+.quick-links ul li:hover a {
+  color: var(--color-white);
+}
+
+/* ===== حقوق النشر (Copyright) ===== */
+.copywrite {
+  background-color: #0f172a;
+  color: #9ca3af;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.copywrite span {
+  color: var(--color-blue);
+  font-weight: 600;
+  margin: 0 3px;
+}
+/* ========================================
+    الشاشات (Media Queries) 
+   ======================================== */
+
+/* شاشات كبيرة */
+@media (max-width: 1100px) {
+  .footer {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+}
+
+/* تابلت */
+@media (max-width: 768px) {
+  .footer {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding: 50px 20px 30px;
+  }
+  
+  .footer h2 {
+    text-align: center;
+  }
+  
+  .footer h2::after {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+  }
+  
+  .about-us {
+    text-align: center;
+  }
+  
+  .social-icons {
+    justify-content: center;
+  }
+  
+  
+  .box-sochials .sochial:hover {
+    transform: translateX(0);
+  }
+  
+  .Categoriess .Categorie ul {
+    justify-content: center;
+  }
+  
+
+  .quick-links ul li svg {
+    display: inline-flex; 
+  }
+  
+  .quick-links ul li {
+    justify-content: flex-start;
+  }
+  
+  .quick-links ul li:hover {
+    transform: translateX(0);
+  }
+   /* ✅ قسم معلومات التواصل - متناسق مثل الصورة */
+  .box-sochials .sochial {
+    display: flex;
+    /* align-items: flex-start; */
+    gap: 12px;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  /* تثبيت عرض الأيقونات */
+  .box-sochials .sochial i {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(95, 143, 169, 0.15);
+    border-radius: 10px;
+  }
+  
+  /* النصوص */
+  .box-sochials .sochial .text {
+    flex: 1;
+  }
+  
+  .box-sochials .sochial .text p {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 600;
+    color: #e5e7eb;
+  }
+  
+  .box-sochials .sochial .text span {
+    font-size: 12px;
+    color: #9ca3af;
+    display: block;
+    margin-top: 4px;
+    line-height: 1.4;
+  }
+}
+
+/* جوال صغير */
+@media (max-width: 480px) {
+  .footer {
+    padding: 40px 15px 25px;
+    gap: 30px;
+  }
+  
+  .footer h2 {
+    font-size: 1.2rem;
+  }
+  
+  .about-us p {
+    font-size: 13px;
+  }
+  
+  .box-sochials .sochial i {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .box-sochials .sochial i svg {
+    font-size: 16px;
+  }
+  
+  .box-sochials .sochial .text p {
+    font-size: 13px;
+  }
+  
+  .box-sochials .sochial .text span {
+    font-size: 11px;
+  }
+  
+  .Categoriess .Categorie ul li a {
+    font-size: 12px;
+    padding: 4px 10px;
+  }
+  
+  .copywrite {
+    font-size: 12px;
+    padding: 15px 10px;
+    text-align: center;
+  }
+}

@@ -1,0 +1,155 @@
+/* ========================================
+   نظام الألوان - متجر المنتجات الإلكترونية
+   ======================================== */
+
+/* app.css - بأسماء جديدة */
+:root {
+  /* ===== الألوان الرئيسية ===== */
+  --color-white: #ffffff; /* اللون الرئيسي - خلفية بيضاء */
+  --color-blue: #5f8fa9; /* الأزرق الأساسي */
+  --color-yellow: #f5a623; /* الأصفر للعروض */
+  --color-dis: #1e3a5f;
+
+  /* ===== تدرجات الأزرق للظلال ===== */
+  --shadow-blue-1: rgba(95, 143, 169, 0.08);
+  --shadow-blue-2: rgba(95, 143, 169, 0.12);
+  --shadow-blue-3: rgba(95, 143, 169, 0.2);
+
+  /* ===== ظلال احترافية (بدون هوفر - تظهر مباشرة) ===== */
+  --shadow-sm: 0 2px 4px var(--shadow-blue-2);
+  --shadow-md: 0 4px 8px var(--shadow-blue-2);
+  --shadow-lg: 0 6px 12px var(--shadow-blue-3);
+
+  /* ===== ظلال مائلة (Shifted Shadows) ===== */
+  --shadow-right: 4px 4px 8px var(--shadow-blue-2); /* ظل مائل لليمين والأسفل */
+  --shadow-left: -4px 4px 8px var(--shadow-blue-2); /* ظل مائل لليسار والأسفل */
+  --shadow-right-sm: 3px 3px 6px var(--shadow-blue-1); /* ظل مائل خفيف لليمين */
+  --shadow-left-sm: -3px 3px 6px var(--shadow-blue-1); /* ظل مائل خفيف لليسار */
+
+  /* ===== ظلال الأزرار (تظهر مباشرة بدون هوفر) ===== */
+  --btn-shadow: 3px 3px 8px var(--shadow-blue-2); /* ظل مائل لليمين والأسفل */
+  --btn-shadow-left: -3px 3px 8px var(--shadow-blue-2); /* ظل مائل لليسار والأسفل */
+
+  /* ===== ألوان قسم التخفيضات ===== */
+  --color-discount-badge: #e74c3c; /* أحمر لشارة الخصم */
+  --color-discount-bg: #fff8e7; /* خلفية فاتحة للقسم */
+  --color-discount-gradient-1: #ffecd2; /* تدرج الخلفية 1 */
+  --color-discount-gradient-2: #fcb69f; /* تدرج الخلفية 2 */
+}
+
+/* ===== الزر الأساسي (خلفية بيضاء، نص أزرق، بروز نظيف) ===== */
+.btn-elevated {
+  /* الخلفية والنص */
+  background-color: var(--white);
+  color: var(--primary-blue);
+
+  /* التنسيق */
+  border: 1px solid var(--primary-blue);
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+
+  /*    للبروز  */
+  box-shadow: var(--elevation-2);
+
+  /* انتقال سلس */
+  transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+
+  /* تحسين شكل الزر */
+  outline: none;
+}
+
+/* عند تمرير الماوس - يزيد البروز (يرتفع أكثر) */
+.btn-elevated:hover {
+  transform: translateY(-2px); /* حركة بسيطة للأعلى */
+  box-shadow: var(--elevation-hover);
+  border-color: var(--primary-blue);
+}
+
+/* عند الضغط (Click) - يبدو كأنه يُضغط للأسفل */
+.btn-elevated:active {
+  transform: translateY(1px);
+  box-shadow: var(--elevation-1);
+  transition: all 0.05s ease;
+}
+
+/* تركيز الزر (للوصولية Accessibility) */
+.btn-elevated:focus {
+  outline: 2px solid var(--primary-blue);
+  outline-offset: 2px;
+}
+
+.Box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.continer {
+  width: 90%;
+}
+
+/* html {
+  overflow: hidden;
+} */
+body {
+  margin: 0px;
+  font-family: "Cairo", sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* زر العودة للأعلى */
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--color-blue), #4a7a94);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.8);
+}
+
+.scroll-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+.scroll-to-top:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: var(--shadow-hover);
+  background: linear-gradient(135deg, #4a7a94, var(--color-blue));
+}
+
+.scroll-to-top:active {
+  transform: translateY(2px) scale(0.95);
+  box-shadow: var(--shadow-active);
+}
+
+/* للشاشات الصغيرة */
+@media (max-width: 768px) {
+  .scroll-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+}

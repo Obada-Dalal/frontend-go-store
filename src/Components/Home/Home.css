@@ -1,0 +1,129 @@
+/* 
+.marvel-device {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 375px; 
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.marvel-device .screen {
+  position: relative;
+  width: 100%;
+  height: auto;
+  background: #fff;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 1;
+}
+
+
+.marvel-device .top-bar,
+.marvel-device .bottom-bar,
+.marvel-device .sleep,
+.marvel-device .volume,
+.marvel-device .camera,
+.marvel-device .sensor,
+.marvel-device .speaker,
+.marvel-device .home {
+  display: block !important;
+  position: absolute;
+  z-index: 2;
+}
+
+
+.marvel-device.iphone8 {
+  width: 375px;
+  height: 667px;
+  background: #d9dbdc;
+  border-radius: 44px;
+  box-shadow: 0 0 0 2px #bbb, 0 0 0 5px #fff, 0 0 0 8px #eee;
+}
+
+.marvel-device.iphone8 .screen {
+  top: 70px;
+  left: 12px;
+  right: 12px;
+  bottom: 70px;
+  width: auto;
+  height: auto;
+  background: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.marvel-device.iphone8 .top-bar {
+  top: 28px;
+  left: 80px;
+  width: 215px;
+  height: 5px;
+  background: #bbb;
+  border-radius: 5px;
+}
+
+.marvel-device.iphone8 .bottom-bar {
+  bottom: 28px;
+  left: 80px;
+  width: 215px;
+  height: 5px;
+  background: #bbb;
+  border-radius: 5px;
+}
+
+.marvel-device.iphone8 .sleep {
+  top: 110px;
+  right: -3px;
+  width: 3px;
+  height: 40px;
+  background: #bbb;
+}
+
+.marvel-device.iphone8 .volume {
+  top: 140px;
+  left: -3px;
+  width: 3px;
+  height: 40px;
+  background: #bbb;
+}
+
+.marvel-device.iphone8 .camera {
+  top: 30px;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  background: #333;
+  border-radius: 50%;
+  transform: translateX(-50%);
+}
+
+.marvel-device.iphone8 .sensor {
+  top: 35px;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  background: #555;
+  border-radius: 50%;
+  transform: translateX(calc(-50% + 10px));
+}
+
+.marvel-device.iphone8 .speaker {
+  top: 45px;
+  left: 50%;
+  width: 50px;
+  height: 6px;
+  background: #555;
+  border-radius: 3px;
+  transform: translateX(-50%);
+}
+
+.marvel-device.iphone8 .home {
+  bottom: 20px;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  background: #ddd;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  border: 1px solid #bbb;
+} */

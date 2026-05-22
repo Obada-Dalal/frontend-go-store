@@ -1,0 +1,319 @@
+.discounts-page {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.discounts-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.back-btn {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-blue);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  padding: 8px 16px;
+  border-radius: 20px;
+  background: var(--color-white);
+  box-shadow: var(--shadow-sm);
+}
+
+.back-btn:hover {
+  transform: translateX(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.discounts-header h1 {
+  font-size: 2.5rem;
+  color: var(--color-discount-badge, #e74c3c);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 1rem;
+}
+
+.discount-icon-large {
+  color: var(--color-yellow);
+  font-size: 2rem;
+  animation: fireAnimation 1.5s infinite alternate;
+}
+
+.discounts-header p {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.discounts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.box-discount-page {
+  background: var(--color-white);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(245, 166, 35, 0.2);
+}
+
+.box-discount-page:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(245, 166, 35, 0.2);
+  border-color: var(--color-yellow);
+}
+
+.discount-image-container {
+  position: relative;
+  overflow: hidden;
+  background: #fafafa;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.discount-image-container img {
+  width: 100%;
+  max-height: 250px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.box-discount-page:hover .discount-image-container img {
+  transform: scale(1.05);
+}
+
+.discount-badge-large {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  box-shadow: 0 3px 10px rgba(231, 76, 60, 0.3);
+}
+
+.discount-info {
+  padding: 1.5rem;
+}
+
+.discount-info h3 {
+  color: var(--color-blue);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  height: 3rem;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.discount-price-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 0.8rem;
+}
+
+.new-price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #e74c3c;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.original-price {
+  font-size: 1.1rem;
+  color: #999;
+  text-decoration: line-through;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.discount-saving {
+  background: #d5f5e3;
+  color: #27ae60;
+  padding: 0.4rem 0.8rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 1rem;
+}
+
+.add-to-cart-btn {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, var(--color-yellow), #e69500);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(245, 166, 35, 0.4);
+}
+
+.disabled-btn {
+  width: 100%;
+  padding: 12px;
+  background: #ccc;
+  color: #666;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: not-allowed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.no-discounts {
+  text-align: center;
+  padding: 5rem 2rem;
+  color: #666;
+}
+
+.no-discounts svg {
+  font-size: 5rem;
+  color: #ddd;
+  margin-bottom: 1rem;
+}
+
+.no-discounts h2 {
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.back-to-shop-btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 12px 30px;
+  background: var(--color-blue);
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.back-to-shop-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Skeleton Loader */
+.skeleton-card {
+  animation: skeleton-pulse 1.5s ease-in-out infinite;
+}
+
+.skeleton-img {
+  width: 100%;
+  height: 250px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.skeleton-info {
+  padding: 1.5rem;
+}
+
+.skeleton-title {
+  height: 20px;
+  width: 80%;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.skeleton-price {
+  height: 25px;
+  width: 60%;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.skeleton-btn {
+  height: 45px;
+  width: 100%;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 10px;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes skeleton-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@media (max-width: 768px) {
+  .discounts-page {
+    padding: 1rem;
+  }
+  
+  .discounts-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .back-btn {
+    position: static;
+    margin-bottom: 1rem;
+    display: inline-flex;
+  }
+  
+  .discounts-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .discounts-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}

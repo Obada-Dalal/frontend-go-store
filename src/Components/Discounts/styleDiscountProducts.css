@@ -1,0 +1,467 @@
+/* ===== قسم التخفيضات الرئيسي ===== */
+.discount-products-section {
+  padding: 2rem;
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  border-radius: 20px;
+  max-width: 1300px;
+  margin: 2rem auto;
+  box-shadow: var(--shadow-md);
+}
+
+/* ترويسة القسم */
+.discount-products-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.discount-products-header h3 {
+  font-size: 2rem;
+  color: #e74c3c;
+  font-weight: 700;
+  margin: 0;
+  padding-bottom: 1rem;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.discount-icon {
+  color: #f5a623;
+  animation: fireAnimation 1.5s infinite alternate;
+}
+
+@keyframes fireAnimation {
+  0% { transform: scale(1); color: #f5a623; }
+  100% { transform: scale(1.2); color: #e74c3c; }
+}
+
+.discount-products-header h3::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #f5a623, #e74c3c);
+  border-radius: 2px;
+}
+
+.discount-products-header p {
+  color: #5a4a3a;
+  margin-top: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* زر عرض جميع التخفيضات */
+.discount-btn {
+  background: linear-gradient(135deg, #f5a623, #e69500) !important;
+  color: white !important;
+  border: none !important;
+  font-weight: 700 !important;
+  padding: 12px 28px !important;
+  font-size: 15px !important;
+}
+
+.discount-btn:hover {
+  background: linear-gradient(135deg, #e69500, #f5a623) !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 6px 20px rgba(245, 166, 35, 0.4) !important;
+}
+
+/* ===== حاوية السلايدر ===== */
+.discount-slider-container {
+  position: relative;
+  padding: 0 50px;
+  overflow: hidden;
+}
+
+/* حاوية اللف */
+.discount-grid-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+/* شبكة المنتجات - flex مع توزيع متساوٍ */
+.discount-grid {
+  display: flex;
+  gap: 1.5rem;
+  transition: all 0.5s ease-in-out;
+}
+
+/* ===== بطاقة المنتج - الحل السحري ===== */
+.product-discount-card {
+  flex: 1 1 0%;
+  min-width: 0;
+  border: 1px solid rgba(245, 166, 35, 0.3);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+}
+
+.product-discount-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(245, 166, 35, 0.3);
+  border-color: #f5a623;
+}
+
+/* صورة المنتج */
+.discount-image {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fafafa;
+}
+
+.discount-image img {
+  width: 100%;
+  /* height: 200px; */
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.product-discount-card:hover .discount-image img {
+  transform: scale(1.05);
+}
+
+/* شارة الخصم */
+.discount-badge-special {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: white;
+  padding: 0.3rem 0.7rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  box-shadow: 0 3px 10px rgba(231, 76, 60, 0.3);
+  white-space: nowrap;
+}
+
+/* معلومات المنتج */
+.product-info {
+  padding: 1.2rem;
+}
+
+.product-name {
+  height: 2.8rem;
+  color: #2c3e50;
+  font-size: 1rem;
+  line-height: 1.4;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.product-price-discount {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+  flex-wrap: wrap;
+}
+
+.discount-price-highlight {
+  color: #e74c3c !important;
+  font-size: 1.2rem !important;
+  font-weight: 700 !important;
+}
+
+.current-price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--color-blue);
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.old-price {
+  font-size: 1rem;
+  color: #95a5a6;
+  text-decoration: line-through;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.discount-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.8rem;
+}
+
+.product-stock {
+  padding: 0.2rem 0.5rem;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.in-stock {
+  background: #d5f5e3;
+  color: #27ae60;
+}
+
+.out-of-stock-latest {
+  color: #dc2626;
+  font-weight: bold;
+  background: #fadbd8;
+}
+
+/* زر السلة */
+.btn-cart-discount {
+  background: linear-gradient(135deg, var(--color-blue), #4a7a94);
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  box-shadow: var(--btn-shadow);
+}
+
+.discount-cart-btn {
+  background: linear-gradient(135deg, #f5a623, #e69500) !important;
+}
+
+.discount-cart-btn:hover {
+  background: linear-gradient(135deg, #e69500, #f5a623) !important;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.btn-cart-discount:active {
+  transform: translateY(2px);
+  box-shadow: var(--shadow-active);
+}
+
+/* زر غير متوفر */
+.latest-disabled-button {
+  opacity: 0.5;
+  cursor: not-allowed !important;
+  background: linear-gradient(to right, #9ca3af, #b1b9c9) !important;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: none !important;
+  pointer-events: none;
+}
+
+/* ===== أزرار التنقل ===== */
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--color-white);
+  border: 2px solid #f5a623;
+  color: #f5a623;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.slider-arrow:hover {
+  background: #f5a623;
+  color: white;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: var(--shadow-md);
+}
+
+.slider-arrow-left {
+  left: 5px;
+}
+
+.slider-arrow-right {
+  right: 5px;
+}
+
+/* ===== نقاط المؤشر ===== */
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 1.5rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #d1d1d1;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background: #f5a623;
+  width: 25px;
+  border-radius: 20px;
+}
+
+/* ===== Skeleton Loader ===== */
+.skeleton-card-discount {
+  animation: skeleton-pulse 1.5s ease-in-out infinite;
+}
+
+.skeleton-img-discount {
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.skeleton-info-discount {
+  padding: 1.2rem;
+}
+
+.skeleton-title-discount {
+  height: 20px;
+  width: 80%;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.skeleton-price-discount {
+  height: 18px;
+  width: 60%;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.skeleton-stock-discount {
+  height: 16px;
+  width: 40%;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.skeleton-btn-discount {
+  height: 35px;
+  width: 100%;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes skeleton-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* حالة عدم وجود منتجات */
+.discount-empty {
+  text-align: center;
+  padding: 3rem;
+  color: #5a4a3a;
+}
+
+/* ===== تجاوب مع الشاشات ===== */
+@media (max-width: 768px) {
+  .discount-products-section {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .discount-slider-container {
+    padding: 0 35px;
+  }
+
+  .discount-products-header h3 {
+    font-size: 1.3rem;
+  }
+
+  .slider-arrow {
+    width: 35px;
+    height: 35px;
+    font-size: 0.9rem;
+  }
+
+  .discount-badge-special {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+  }
+  
+  /* .discount-image img {
+    height: 150px;
+  } */
+  
+  .product-name {
+    font-size: 0.85rem;
+    height: 2.5rem;
+  }
+  
+  .current-price {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .discount-products-section {
+    margin: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  .discount-grid {
+    gap: 0.8rem;
+  }
+
+  .discount-slider-container {
+    padding: 0 30px;
+  }
+
+  .discount-products-header h3 {
+    font-size: 1.1rem;
+  }
+}

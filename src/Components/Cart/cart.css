@@ -1,0 +1,547 @@
+/* ===== Cart Page Styles - باستخدام ألوان الـ Root الموحدة ===== */
+
+/* ===== الصفحة الرئيسية ===== */
+.BoxCart {
+  background: linear-gradient(135deg, #f8fafc 0%, #e8f0f7 100%);
+  min-height: 100vh;
+  padding: 2rem 0;
+}
+
+.BoxCart::-webkit-scrollbar {
+  width: 8px;
+}
+
+.BoxCart::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 10px;
+}
+
+.BoxCart::-webkit-scrollbar-thumb {
+  background: var(--color-blue);
+  border-radius: 10px;
+}
+
+.BoxCart::-webkit-scrollbar-thumb:hover {
+  background: var(--color-dsi);
+}
+
+/* ===== الحاوية الرئيسية ===== */
+.continerCart {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ===== العنوان ===== */
+.continerCart .Text {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.continerCart .Text h3 {
+  font-size: 2.2rem;
+  color: var(--color-dsi);
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.75rem;
+}
+
+.continerCart .Text h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-blue), var(--color-yellow));
+  border-radius: 4px;
+}
+
+/* ===== قائمة المنتجات ===== */
+.BoxMainCart {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* ===== بطاقة المنتج (تصميم عصري) ===== */
+.ProdictCart {
+  background: var(--color-white);
+  border-radius: 20px;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  border: 1px solid rgba(95, 143, 169, 0.15);
+  animation: slideIn 0.4s ease-out;
+}
+
+.ProdictCart:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+  border-color: rgba(95, 143, 169, 0.3);
+}
+
+/* ===== قسم تفاصيل المنتج ===== */
+.ProdectDetels {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  flex: 2;
+}
+
+/* ===== صورة المنتج ===== */
+.ProdictImg {
+  flex-shrink: 0;
+}
+
+.ProdictImg img {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 1px solid rgba(95, 143, 169, 0.2);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.ProdictImg img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(95, 143, 169, 0.2);
+}
+
+/* ===== معلومات المنتج ===== */
+.ProdectNameAndPrice {
+  flex: 1;
+}
+
+.ProdectName h4 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-dsi);
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.ProdectName p {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 16px;
+}
+
+.ProdectName p::before {
+  content: '🎨';
+  font-size: 14px;
+}
+
+.ProdectPrice {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.ProdectPrice p {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-dsi);
+}
+
+.ProdectPrice p:first-child {
+  color: var(--color-blue);
+}
+
+.ProdectPrice p[style*="line-through"] {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #94a3b8 !important;
+}
+
+/* ===== قسم التحكم (العداد + الحذف) ===== */
+.quantityAndDeleteProdect {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-shrink: 0;
+}
+
+/* ===== عداد الكمية ===== */
+.quantityAndDeleteProdect .counter {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #f8fafc;
+  padding: 0.35rem;
+  border-radius: 50px;
+  border: 1px solid rgba(95, 143, 169, 0.2);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.quantityAndDeleteProdect .counter button {
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: var(--color-white);
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-blue);
+  transition: all 0.25s ease;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quantityAndDeleteProdect .counter button:hover:not(:disabled) {
+  background: var(--color-blue);
+  color: var(--color-white);
+  transform: scale(1.08);
+  box-shadow: 0 4px 12px rgba(95, 143, 169, 0.3);
+}
+
+.quantityAndDeleteProdect .counter button:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.quantityAndDeleteProdect .counter button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.quantityAndDeleteProdect .counter p {
+  min-width: 45px;
+  text-align: center;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-dsi);
+  margin: 0;
+}
+
+/* ===== زر الحذف ===== */
+.buttonDelete {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  color: var(--color-white);
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.buttonDelete:hover {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  transform: scale(1.08) rotate(2deg);
+  box-shadow: 0 8px 20px rgba(239, 68, 68, 0.4);
+}
+
+.buttonDelete:active {
+  transform: scale(0.95);
+}
+
+/* ===== قسم السعر الكلي والشراء ===== */
+.SumPriceProdectAndPuy {
+  background: var(--color-white);
+  border-radius: 24px;
+  padding: 1.75rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(95, 143, 169, 0.15);
+  margin-top: 2rem;
+  position: sticky;
+  bottom: 1.5rem;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.SumPriceProdect h2 {
+  font-size: 1.6rem;
+  color: var(--color-dsi);
+  margin: 0;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.SumPriceProdect h2::before {
+  content: '💰';
+  font-size: 1.8rem;
+}
+
+/* ===== زر الشراء ===== */
+.Puy .ButtonBuy {
+  padding: 1rem 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 50px;
+  background: linear-gradient(135deg, var(--color-blue) 0%, var(--color-dsi) 100%);
+  border: none;
+  color: var(--color-white);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  box-shadow: 0 8px 25px -6px rgba(30, 58, 95, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.Puy .ButtonBuy::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.Puy .ButtonBuy:hover:not(:disabled) {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px -8px rgba(30, 58, 95, 0.5);
+  background: linear-gradient(135deg, var(--color-dsi) 0%, var(--color-blue) 100%);
+}
+
+.Puy .ButtonBuy:hover::before {
+  left: 100%;
+}
+
+.Puy .ButtonBuy:active:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -4px rgba(30, 58, 95, 0.4);
+}
+
+.Puy .ButtonBuy:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: linear-gradient(135deg, #94a3b8 0%, #64748b 100%);
+  box-shadow: none;
+}
+
+.Puy .ButtonBuy svg {
+  font-size: 1.4rem;
+}
+
+/* ===== رسالة السلة الفارغة ===== */
+.BoxMainCart > h2 {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--color-white);
+  border-radius: 24px;
+  color: #64748b;
+  font-size: 1.3rem;
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+  border: 1px dashed rgba(95, 143, 169, 0.3);
+}
+
+.BoxMainCart > h2::before {
+  content: '🛒';
+  display: block;
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+/* ===== تأثيرات حركية ===== */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== تحسينات للشاشات المتوسطة ===== */
+@media (max-width: 1024px) {
+  .continerCart {
+    padding: 0 1.25rem;
+  }
+  
+  .ProdictCart {
+    padding: 1.25rem;
+  }
+  
+  .ProdectDetels {
+    gap: 1.25rem;
+  }
+  
+  .ProdectName h4 {
+    font-size: 1.1rem;
+  }
+  
+  .SumPriceProdectAndPuy {
+    padding: 1.5rem;
+  }
+  
+  .SumPriceProdect h2 {
+    font-size: 1.4rem;
+  }
+}
+
+/* ===== تحسينات للشاشات الصغيرة ===== */
+@media (max-width: 768px) {
+  .BoxCart {
+    padding: 1.25rem 0;
+  }
+  
+  .continerCart .Text h3 {
+    font-size: 1.8rem;
+  }
+  
+  .ProdictCart {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.25rem;
+    padding: 1.25rem;
+  }
+  
+  .ProdectDetels {
+    gap: 1.25rem;
+  }
+  
+  .ProdictImg img {
+    width: 90px;
+    height: 90px;
+  }
+  
+  .ProdectName h4 {
+    font-size: 1rem;
+  }
+  
+  .ProdectPrice p {
+    font-size: 1.1rem;
+  }
+  
+  .quantityAndDeleteProdect {
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .quantityAndDeleteProdect .counter {
+    gap: 0.35rem;
+  }
+  
+  .quantityAndDeleteProdect .counter button {
+    width: 32px;
+    height: 32px;
+    font-size: 1.1rem;
+  }
+  
+  .SumPriceProdectAndPuy {
+    flex-direction: column;
+    gap: 1.25rem;
+    text-align: center;
+    position: static;
+    padding: 1.5rem;
+  }
+  
+  .SumPriceProdect h2 {
+    font-size: 1.3rem;
+    justify-content: center;
+  }
+  
+  .Puy {
+    width: 100%;
+  }
+  
+  .Puy .ButtonBuy {
+    width: 100%;
+    justify-content: center;
+    padding: 0.875rem 1.5rem;
+  }
+}
+
+/* ===== تحسينات للشاشات الصغيرة جداً ===== */
+@media (max-width: 480px) {
+  .continerCart {
+    padding: 0 1rem;
+  }
+  
+  .continerCart .Text h3 {
+    font-size: 1.5rem;
+  }
+  
+  .ProdectDetels {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .ProdectPrice {
+    justify-content: center;
+  }
+  
+  .quantityAndDeleteProdect {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .quantityAndDeleteProdect .counter {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .buttonDelete {
+    width: 100%;
+    border-radius: 14px;
+  }
+  
+  .ProdictImg img {
+    width: 140px;
+    height: 140px;
+  }
+  
+  .ProdectName h4 {
+    font-size: 1.1rem;
+  }
+  
+  .ProdectName p{
+    justify-content: center;
+  }
+  .SumPriceProdect h2 {
+    font-size: 1.2rem;
+  }
+  
+  .Puy .ButtonBuy {
+    font-size: 1rem;
+    padding: 0.75rem 1.25rem;
+  }
+}
+
+/* ===== دعم RTL للغة العربية ===== */
+[dir="rtl"] .ProdectDetels {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .ProdectName p::before {
+  margin-left: 5px;
+}
+
+[dir="rtl"] .Puy .ButtonBuy svg {
+  margin-left: 8px;
+}

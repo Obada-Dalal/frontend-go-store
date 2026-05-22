@@ -1,0 +1,634 @@
+/* ===== Auth Pages Unified Styles ===== */
+
+/* ===== Root Variables ===== */
+:root {
+  --color-white: #ffffff;
+  --color-blue: #5f8fa9;
+  --color-yellow: #f5a623;
+  --color-dsi: #1e3a5f;
+  --bg-light: #f8fafc;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  --shadow-active: 0 5px 10px -3px rgba(0, 0, 0, 0.2);
+  --btn-shadow: 0 4px 10px rgba(95, 143, 169, 0.2);
+  --success-green: #10b981;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== Main Container ===== */
+.overRotate {
+  overflow: hidden;
+  position: relative;
+  min-height: 100vh;
+  font-family: "Cairo", sans-serif;
+  background: linear-gradient(135deg, var(--color-dsi) 0%, #0f2a45 100%);
+}
+
+/* ===== Container Wrapper ===== */
+.continerLogIN {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  z-index: 5;
+}
+
+/* ===== الدائرة الكبيرة المائلة ===== */
+.backgroundLogIN::before {
+  content: "";
+  width: 100%;
+  height: 100vh;
+  background: var(--color-blue);
+  border-radius: 200px;
+  -webkit-border-radius: 200px;
+  -moz-border-radius: 200px;
+  -ms-border-radius: 200px;
+  -o-border-radius: 200px;
+  transform: rotate(-30deg) scale(1.3);
+  -webkit-transform: rotate(-30deg) scale(1.3);
+  -moz-transform: rotate(-30deg) scale(1.3);
+  -ms-transform: rotate(-30deg) scale(1.3);
+  -o-transform: rotate(-30deg) scale(1.3);
+  position: absolute;
+  top: -500px;
+  left: 150px;
+  display: block;
+  opacity: 0.25;
+  z-index: 1;
+}
+
+/* ===== Glassmorphism Card ===== */
+.BoxLogIN {
+  padding: 30px 25px;
+  width: 100%;
+  max-width: 420px;
+  background: rgba(30, 58, 95, 0.5);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  border-radius: 24px;
+  box-shadow:
+    0 25px 50px -12px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.6s ease-out;
+  z-index: 10;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Form Styles ===== */
+.BoxLogIN form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.BoxLogIN form img {
+  width: 140px;
+  height: auto;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.BoxLogIN form img:hover {
+  transform: scale(1.02);
+}
+
+.BoxLogIN form .title {
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.BoxLogIN form .title h1 {
+  color: var(--color-white);
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  letter-spacing: 1px;
+}
+
+/* ===== Input Fields ===== */
+.input-wrapper {
+  width: 100%;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.BoxLogIN form input:not([type="checkbox"]) {
+  padding: 14px 20px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  border-radius: 14px;
+  color: var(--color-white);
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.BoxLogIN form input:focus {
+  border-color: var(--color-yellow);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 0 4px rgba(245, 166, 35, 0.15);
+}
+
+.BoxLogIN form input::placeholder {
+  color: rgba(255, 255, 255, 0.65);
+  font-weight: 400;
+  font-size: 15px;
+}
+
+/* ===== Password Input with Eye Icon ===== */
+.password-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.password-wrapper input {
+  padding-right: 50px !important;
+}
+
+.eye-icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.7);
+  opacity: 0.8;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  z-index: 10;
+}
+
+.eye-icon:hover {
+  opacity: 1;
+  color: var(--color-yellow);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.eye-icon svg {
+  width: 100%;
+  height: 100%;
+  stroke: currentColor;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+/* ===== Buttons Container ===== */
+.buttonform {
+  width: 100%;
+  display: flex;
+  gap: 15px;
+  margin: 15px 0 20px;
+}
+
+/* ===== Primary Button ===== */
+.LogInbutton {
+  flex: 1;
+  padding: 14px 20px;
+  background: var(--color-blue);
+  color: var(--color-white);
+  border: none;
+  border-radius: 14px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 20px -6px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.LogInbutton::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.25),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.LogInbutton:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px -8px rgba(0, 0, 0, 0.5);
+  background: var(--color-yellow);
+  border-color: var(--color-yellow);
+}
+
+.LogInbutton:hover::before {
+  left: 100%;
+}
+
+.LogInbutton:active:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 15px -4px rgba(0, 0, 0, 0.4);
+}
+
+.LogInbutton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ===== Secondary Button ===== */
+.Canselbutton {
+  flex: 1;
+  padding: 14px 20px;
+  background: transparent;
+  color: var(--color-white);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 14px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.Canselbutton:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: var(--color-white);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -6px rgba(0, 0, 0, 0.3);
+}
+
+.Canselbutton:active {
+  transform: translateY(0);
+}
+
+/* ===== Sign Up Link Section ===== */
+.spanOne {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.SignUp {
+  background: transparent;
+  border: none;
+  padding: 5px 10px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-yellow);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.SignUp::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-yellow);
+  transition: width 0.3s ease;
+}
+
+.SignUp:hover {
+  color: var(--color-white);
+}
+
+.SignUp:hover::after {
+  width: 100%;
+}
+
+/* ===== Animated Circles Background ===== */
+.background-circles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+  background: transparent;
+  pointer-events: none;
+}
+
+.background-circles span {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(45px);
+  pointer-events: none;
+}
+
+.background-circles span:nth-child(1) {
+  width: 20vw;
+  height: 20vw;
+  background: var(--color-blue);
+  opacity: 0.7;
+  top: 10%;
+  left: -5%;
+  animation: float 6s ease-in-out infinite;
+}
+
+.background-circles span:nth-child(2) {
+  width: 15vw;
+  height: 15vw;
+  background: var(--color-yellow);
+  opacity: 0.5;
+  top: 60%;
+  left: 10%;
+  animation: float 8s ease-in-out infinite 1s;
+}
+
+.background-circles span:nth-child(3) {
+  width: 30vw;
+  height: 30vw;
+  background: var(--color-yellow);
+  opacity: 0.3;
+  top: 10%;
+  right: -10%;
+  animation: float 7s ease-in-out infinite 2s;
+}
+
+.background-circles span:nth-child(4) {
+  width: 10vw;
+  height: 10vw;
+  background: #7ab3d1;
+  opacity: 0.5;
+  bottom: 15%;
+  right: 20%;
+  animation: float 5s ease-in-out infinite 1.5s;
+}
+
+.background-circles span:nth-child(5) {
+  width: 18vw;
+  height: 18vw;
+  background: linear-gradient(
+    135deg,
+    var(--color-blue) 0%,
+    var(--color-yellow) 100%
+  );
+  opacity: 0.5;
+  top: 30%;
+  left: 40%;
+  animation: float 9s ease-in-out infinite 3s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-25px) scale(1.05);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ===== Loading Overlay ===== */
+.loadingOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  overflow: hidden;
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  border-top: 4px solid var(--color-yellow);
+  border-right: 4px solid var(--color-blue);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  box-shadow: 0 0 30px rgba(95, 143, 169, 0.4);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===== Sweetalert2 Custom Styles (RTL & Mixed Text) ===== */
+.swal2-popup.swal-custom-popup {
+  direction: rtl; /* لأن صفحتك عربية بالكامل */
+  text-align: right;
+  font-family: "Cairo", sans-serif;
+}
+
+/* الحاوية النصية لـ Swal – الحل السحري لخلط اللغات */
+.swal-mixed-text {
+  unicode-bidi: plaintext;
+  text-align: right; /* النص العربي يمين، والإنجليزي سيأخذ اتجاهه لوحده */
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* تنسيق أزرار التأكيد والإلغاء (اختياري) */
+.swal-custom-confirm {
+  background: var(--color-blue) !important;
+  color: #fff !important;
+  border-radius: 14px !important;
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  padding: 12px 28px !important;
+}
+.swal-custom-cancel {
+  background: transparent !important;
+  color: #fff !important;
+  border: 2px solid rgba(255, 255, 255, 0.3) !important;
+  border-radius: 14px !important;
+  font-weight: 600 !important;
+  padding: 12px 28px !important;
+}
+
+/* ============ SweetAlert2 Custom Glass Theme ============ */
+/* الخلفية الشفافة المعتمة */
+.swal2-backdrop-custom {
+  background: rgba(0, 0, 0, 0.75) !important;
+  backdrop-filter: blur(12px);
+}
+
+/* النافذة الرئيسية – زجاجية مثل BoxLogIN */
+.swal-custom-popup {
+  background: rgba(30, 58, 95, 0.5) !important;
+  backdrop-filter: blur(18px) saturate(130%);
+  -webkit-backdrop-filter: blur(18px) saturate(130%);
+  border: 1.5px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 24px !important;
+  box-shadow:
+    0 25px 50px -12px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+  color: #fff !important;
+  font-family: "Cairo", sans-serif !important;
+  direction: rtl;
+  text-align: right;
+}
+
+/* العنوان */
+.swal-custom-popup .swal2-title {
+  color: #fff !important;
+  font-size: 24px;
+  font-weight: 700;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* النص (مع دعم خلط اللغات) */
+.swal-mixed-text {
+  unicode-bidi: plaintext;
+  text-align: center;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
+/* أيقونة النجاح / الخطأ */
+.swal-custom-popup .swal2-icon.swal2-success {
+  border-color: #f5a623 !important;
+  color: #f5a623 !important;
+}
+.swal-custom-popup .swal2-icon.swal2-error {
+  border-color: #f5a623 !important;
+  color: #f5a623 !important;
+}
+.swal-custom-popup .swal2-icon.swal2-success [class^="swal2-success-line"] {
+  background-color: #f5a623 !important;
+}
+.swal-custom-popup .swal2-icon.swal2-error [class^="swal2-x-mark-line"] {
+  background-color: #f5a623 !important;
+}
+
+/* زر التأكيد (الأساسي) */
+.swal-custom-confirm {
+  background: #5f8fa9 !important;
+  color: #fff !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 14px !important;
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  padding: 12px 28px !important;
+  box-shadow: 0 8px 20px -6px rgba(0, 0, 0, 0.4) !important;
+  transition: all 0.3s ease !important;
+  margin: 8px;
+}
+.swal-custom-confirm:hover {
+  background: #f5a623 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* زر الإلغاء (الثانوي) */
+.swal-custom-cancel {
+  background: transparent !important;
+  color: #fff !important;
+  border: 2px solid rgba(255, 255, 255, 0.3) !important;
+  border-radius: 14px !important;
+  font-weight: 600 !important;
+  font-size: 16px !important;
+  padding: 12px 28px !important;
+  transition: all 0.3s ease !important;
+  margin: 8px;
+}
+.swal-custom-cancel:hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-color: #fff !important;
+  transform: translateY(-2px) !important;
+}
+
+/* شريط التقدم للمؤقت */
+.swal2-timer-progress-bar {
+  background: linear-gradient(90deg, #5f8fa9, #f5a623) !important;
+  height: 4px;
+  border-radius: 0 0 24px 24px;
+}
+
+/* ===== Media Queries ===== */
+@media (max-width: 600px) {
+  .BoxLogIN {
+    padding: 25px 20px;
+    max-width: 95%;
+  }
+
+  .BoxLogIN form img {
+    width: 120px;
+  }
+
+  .BoxLogIN form .title h1 {
+    font-size: 28px;
+  }
+
+  .BoxLogIN form input:not([type="checkbox"]) {
+    padding: 12px 16px;
+    font-size: 15px;
+  }
+
+  .buttonform {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .LogInbutton,
+  .Canselbutton {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 16px;
+  }
+
+  .spanOne {
+    font-size: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .BoxLogIN {
+    padding: 20px 15px;
+  }
+
+  .BoxLogIN form img {
+    width: 100px;
+  }
+}
