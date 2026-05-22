@@ -38,7 +38,7 @@ export default function Footer({ onSearchSelect }) {
             <img
               style={{ width: "140px" }}
               src="Images/svgFooterLogo.svg"
-              alt="Smart Gear Store Logo"
+              alt=" go Store "
             />
           </div>
           <p>
@@ -51,7 +51,7 @@ export default function Footer({ onSearchSelect }) {
           {/* ✅ أيقونات وسائل التواصل - مع كلاس مخصص لكل تطبيق */}
           <div className="social-icons">
             <a
-              href="https://www.instagram.com/smart_gear_store"
+              href="https://www.instagram.com/go_store_25"
               className="social-icon instagram"
               aria-label="Instagram"
               target="_blank"
@@ -99,7 +99,6 @@ export default function Footer({ onSearchSelect }) {
             <div className="text">
               {/* <p>للأتصال</p> */}
               <span>+963 947 584 270</span>
-              <br />
               <span>+963 982 359 538</span>
             </div>
           </div>
