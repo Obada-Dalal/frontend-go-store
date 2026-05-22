@@ -65,44 +65,6 @@ export default function Cart() {
     return sum + price * item.quantity;
   }, 0);
 
-  const createWhatsAppLinkForCart = () => {
-    const phoneNumber = "+963982359538";
-    let total = 0;
-
-    const message = cart.items
-      .map((item) => {
-        const price =
-          item.productId.discountPrice &&
-          item.productId.discountPrice < item.productId.price
-            ? item.productId.discountPrice
-            : item.productId.price;
-
-        const itemTotal = price * item.quantity;
-        total += itemTotal;
-
-        return (
-          `📦 المنتج: ${item.productId.name}\n` +
-          `🎨 اللون: ${item.color}\n` +
-          `🔢 الكمية: ${item.quantity}\n` +
-          `💵 السعر الفردي: ${price}$\n` +
-          `💰 السعر الإجمالي لهذا المنتج: ${itemTotal}$\n\n`
-        );
-      })
-      .join("");
-
-    const finalMessage =
-      `مرحباً، أرغب بشراء المنتجات التالية:\n\n` +
-      message +
-      `====================\n` +
-      `💵 المجموع الكلي: ${total}$\n` +
-      `====================\n` +
-      `يرجى تأكيد الطلب.`;
-
-    return `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-      finalMessage
-    )}`;
-  };
-
   const buyAllFromCart = async () => {
     try {
       const token = localStorage.getItem("token");
@@ -125,26 +87,23 @@ export default function Cart() {
         return;
       }
 
+      // تأكيد الطلب
       const result = await Swal.fire({
-        title: "جاهز للشراء عبر واتساب؟",
-        text: "سيتم فتح محادثة واتساب لإتمام عملية الشراء",
+        title: "تأكيد الطلب",
+        text: "هل أنت متأكد من تأكيد الطلب؟",
         icon: "question",
         showCancelButton: true,
-        confirmButtonText: "نعم، افتح واتساب",
+        confirmButtonText: "نعم، تأكيد",
         cancelButtonText: "إلغاء",
-        confirmButtonColor: "#25D366",
+        confirmButtonColor: "#3085d6",
         cancelButtonColor: "#d33",
         reverseButtons: true
-        // input: "textarea",
-        // inputLabel: "ملاحظات إضافية (اختياري)",
-        // inputPlaceholder: "أضف أي ملاحظات للطلب هنا..."
       });
 
       if (result.isConfirmed) {
         // تحضير بيانات الطلب
         const orderItems = cart.items
           .map((item) => {
-            // التأكد من وجود productId
             if (!item.productId || !item.productId._id) {
               console.error("منتج بدون ID:", item);
               return null;
@@ -168,9 +127,8 @@ export default function Cart() {
                   : ""
             };
           })
-          .filter((item) => item !== null); // إزالة العناصر غير الصالحة
+          .filter((item) => item !== null);
 
-        // التحقق من نجاح تحضير العناصر
         if (orderItems.length === 0) {
           Swal.fire({
             icon: "error",
@@ -180,16 +138,14 @@ export default function Cart() {
           return;
         }
 
-        const whatsappLink = createWhatsAppLinkForCart();
-
-        // إنشاء الطلب في قاعدة البيانات
+        // تجهيز بيانات الطلب (بدون رابط واتساب)
         const orderData = {
           items: orderItems,
           totalAmount: Number(totalPrice) || 0,
-          notes: result.value || "",
-          whatsappMessage: whatsappLink,
+          notes: "", // أو يمكنك إضافة حقل ملاحظات إذا أردت
+          whatsappMessage: "", // لم نعد بحاجة لوضع رابط واتساب، لكن اتركه فارغاً لتفادي الأخطاء
           shippingAddress: {
-            fullName: "", // يمكن إضافته من المستخدم لاحقاً
+            fullName: "",
             phone: "",
             address: "",
             city: ""
@@ -201,14 +157,11 @@ export default function Cart() {
         const order = await createOrder(orderData);
 
         if (order) {
-          // فتح واتساب
-          window.open(whatsappLink, "_blank");
-
-          // عرض رسالة نجاح مع خيار الذهاب للطلبات
+          // ✅ تم إنشاء الطلب بنجاح، عرض الخيارات
           Swal.fire({
             icon: "success",
             title: "تم إنشاء الطلب بنجاح",
-            text: "سيتم التواصل معك قريباً عبر واتساب",
+            text: "يمكنك متابعة طلباتك أو مواصلة التسوق",
             showConfirmButton: true,
             confirmButtonText: "عرض طلباتي",
             showCancelButton: true,
