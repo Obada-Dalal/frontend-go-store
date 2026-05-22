@@ -20,6 +20,7 @@ import EditAdvertisement from "./Components/Dashboard/AdvertisementsList/EditAdv
 import UserOrders from "./Components/UserOrder/UserOrders";
 import OrdersManagemen from "./Components/Dashboard/OrdersManagemen/OrdersManagemen";
 import DiscountsPage from "./Components/Discounts/DiscountsPage";
+import ScrollToTop from "./Components/ScrollToTop";
 
 function App() {
   const [showScrollBtn, setShowScrollBtn] = useState(false);
@@ -43,6 +44,7 @@ function App() {
     <>
       <UserProvider>
         <Router>
+          <ScrollToTop />
           <Routes>
             {/* المسارات الرئيسية */}
             <Route path="/" element={<Home />}>
