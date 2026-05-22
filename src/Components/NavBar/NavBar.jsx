@@ -59,7 +59,7 @@ export default function NavBar() {
         <div id="Home" className="BoxNavBar">
           <div className="LogoAndSearchAndSignInAndShoppingcart">
             <div className="Logo">
-              <img src="Images/SVGLogo.svg" alt="Logo" />
+              <img src="/Images/SVGLogo.svg" alt="Logo" />
             </div>
             {isAdmin && (
               <Link to="/Dashboard" className="dashboard-btn media">
