@@ -422,13 +422,6 @@
   padding: 3rem;
   color: #5a4a3a;
 }
-
-@media (max-width: 1024px) {
-  .discount-image {
-    height: 144px;
-  }
-}
-
 /* ===== تجاوب مع الشاشات ===== */
 @media (max-width: 768px) {
   .discount-products-section {
@@ -486,5 +479,9 @@
 
   .discount-products-header h3 {
     font-size: 1.1rem;
+  }
+
+  .discount-image {
+    height: 276px;
   }
 }
