@@ -13,7 +13,7 @@ export default function Dashboard() {
     <div className="page-dashboard">
       <div className="sidebar">
         <div className="Logo">
-          <img src="Images/SVGLogo.svg" alt="Logo" />
+          <img src="/Images/SVGLogo.svg" alt="Logo" />
         </div>
         <ul>
           <li>
