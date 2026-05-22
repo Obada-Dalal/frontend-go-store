@@ -96,7 +96,10 @@ export default function Footer({ onSearchSelect }) {
             <i>
               <IoCall />
             </i>
-            <div className="text">
+            <div
+              className="text"
+              style={{ display: "flex", flexDirection: "column" }}
+            >
               {/* <p>للأتصال</p> */}
               <span>+963 947 584 270</span>
               <span>+963 982 359 538</span>
