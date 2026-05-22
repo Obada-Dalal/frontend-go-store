@@ -37,7 +37,7 @@ export default function Footer({ onSearchSelect }) {
           <div className="logo">
             <img
               style={{ width: "140px" }}
-              src="../../../public/Images/svgFooterLogo.svg"
+              src="Images/svgFooterLogo.svg"
               alt="Smart Gear Store Logo"
             />
           </div>
