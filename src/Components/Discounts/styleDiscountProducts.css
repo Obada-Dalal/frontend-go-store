@@ -423,6 +423,12 @@
   color: #5a4a3a;
 }
 
+@media (max-width: 1024px) {
+  .discount-image {
+    height: 144px;
+  }
+}
+
 /* ===== تجاوب مع الشاشات ===== */
 @media (max-width: 768px) {
   .discount-products-section {
