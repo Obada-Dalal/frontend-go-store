@@ -111,14 +111,14 @@ export default function Footer({ onSearchSelect }) {
               <span>اوقات العمل: 10:00 - 18:00</span>
             </div>
           </div>
-          <div className="sochial">
+          {/* <div className="sochial">
             <i>
               <MdEmail />
             </i>
-            {/* <div className="text">
+            <div className="text">
               <span>SmartGearStore@gmail.com</span>
-            </div> */}
-          </div>
+            </div>
+          </div> */}
         </div>
         {/*  sochials قسم  *** */}
 
