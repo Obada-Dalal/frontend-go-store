@@ -32,8 +32,14 @@
 }
 
 @keyframes fireAnimation {
-  0% { transform: scale(1); color: #f5a623; }
-  100% { transform: scale(1.2); color: #e74c3c; }
+  0% {
+    transform: scale(1);
+    color: #f5a623;
+  }
+  100% {
+    transform: scale(1.2);
+    color: #e74c3c;
+  }
 }
 
 .discount-products-header h3::after {
@@ -89,6 +95,7 @@
   display: flex;
   gap: 1.5rem;
   transition: all 0.5s ease-in-out;
+  min-height: 325px;
 }
 
 /* ===== بطاقة المنتج - الحل السحري ===== */
@@ -391,13 +398,22 @@
 }
 
 @keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
 
 @keyframes skeleton-pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.7; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
 }
 
 /* حالة عدم وجود منتجات */
@@ -432,16 +448,16 @@
     font-size: 0.7rem;
     padding: 0.2rem 0.5rem;
   }
-  
+
   /* .discount-image img {
     height: 150px;
   } */
-  
+
   .product-name {
     font-size: 0.85rem;
     height: 2.5rem;
   }
-  
+
   .current-price {
     font-size: 1rem;
   }
