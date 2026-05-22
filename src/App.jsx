@@ -12,7 +12,7 @@ import Search from "./Components/Search/Search";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import ProductList from "./Components/Dashboard/productList/ProductList";
 import EditProduct from "./Components/Dashboard/EditProduct/EditProduct";
-import AddProduct from "./Components/Dashboard/addproduct/Addproduct";
+import AddProduct from "./Components/Dashboard/addproduct/AddProduct";
 import UsersManagement from "./Components/Dashboard/UsersManagement/UsersManagement";
 import AdvertisementsList from "./Components/Dashboard/AdvertisementsList/AdvertisementsList";
 import AddAdvertisement from "./Components/Dashboard/AdvertisementsList/AddAdvertisement";
@@ -75,7 +75,7 @@ function App() {
             <Route path="/Cart" element={<Cart />} />
             <Route path="/search" element={<Search />} />
             <Route path="/my-orders" element={<UserOrders />} />
-            <Route path="/discounts" element={<DiscountsPage />} /> 
+            <Route path="/discounts" element={<DiscountsPage />} />
           </Routes>
         </Router>
       </UserProvider>
