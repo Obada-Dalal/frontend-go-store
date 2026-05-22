@@ -23,7 +23,7 @@
 // //   return imagesMap[slug] || imagesMap["default"];
 // // };
 // // GetCategoryImage.jsx
-// import { 
+// import {
 //   FaMobileAlt,
 //   FaMicrophone,
 //   FaHeadphones,
@@ -58,44 +58,44 @@
 //     "SmartWitch": { icon: FaMobileAlt, color: "#667eea" },
 //     "phone": { icon: FaMobileAlt, color: "#3b82f6" },
 //     "Mobile cover": { icon: FaMobile, color: "#8b5cf6" },
-    
+
 //     // الشحن والكابلات
 //     "Charger & Cable": { icon: FaChargingStation, color: "#f59e0b" },
 //     "Power Bank": { icon: FaBatteryFull, color: "#22c55e" },
-    
+
 //     // الصوتيات
 //     "headphones": { icon: FaHeadphones, color: "#ef4444" },
 //     "Speakers": { icon: FaMusic, color: "#ec4899" },
 //     "Microphones": { icon: FaMicrophone, color: "#06b6d4" },
-    
+
 //     // المنزل والمطبخ
 //     "Air freshener": { icon: FaWind, color: "#14b8a6" },
 //     "Coffee making machine": { icon: FaMugHot, color: "#78350f" },
 //     "Floor cleaning machine": { icon: FaBroom, color: "#0ea5e9" },
-    
+
 //     // الإضاءة
 //     "Lighting & Lamps": { icon: FaLightbulb, color: "#fbbf24" },
-    
+
 //     // التخزين
 //     // "Storage devices": { icon: FaHardDrive, color: "#6b7280" },
-    
+
 //     // العناية الشخصية والجمال
 //     "Lifestyle": { icon: FaHeartbeat, color: "#f43f5e" },
 //     "Self Care & Beauty": { icon: FaLeaf, color: "#10b981" },
 //     "Shaving machines": { icon: FaCut, color: "#8b5cf6" },
-    
+
 //     // الإلكترونيات الأخرى
 //     "Holder": { icon: FaMobile, color: "#a855f7" },
 //     "DJI Collection": { icon: FaCamera, color: "#000000" },
 //     // "Scooter": { icon: FaScooter, color: "#22c55e" },
-    
+
 //     // المراوح والتهوية
 //     "Fans & Ventilation": { icon: FaWind, color: "#0ea5e9" },
-    
+
 //     // افتراضي
 //     "default": { icon: FaBoxOpen, color: "#9ca3af" }
 //   };
-  
+
 //   return iconsMap[slug] || iconsMap["default"];
 // };
 
@@ -105,35 +105,35 @@
 //     "SmartWitch": "https://cdn-icons-png.flaticon.com/512/1055/1055685.png",
 //     "phone": "https://cdn-icons-png.flaticon.com/512/1055/1055685.png",
 //     "Mobile cover": "https://cdn-icons-png.flaticon.com/512/1055/1055685.png",
-    
+
 //     "Charger & Cable": "https://cdn-icons-png.flaticon.com/512/3106/3106774.png",
 //     "Power Bank": "https://cdn-icons-png.flaticon.com/512/3106/3106774.png",
-    
+
 //     "headphones": "https://cdn-icons-png.flaticon.com/512/3393/3393881.png",
 //     "Speakers": "https://cdn-icons-png.flaticon.com/512/727/727245.png",
 //     "Microphones": "https://cdn-icons-png.flaticon.com/512/2527/2527827.png",
-    
+
 //     "Air freshener": "https://cdn-icons-png.flaticon.com/512/3095/3095121.png",
 //     "Coffee making machine": "https://cdn-icons-png.flaticon.com/512/924/924514.png",
 //     "Floor cleaning machine": "https://cdn-icons-png.flaticon.com/512/2951/2951372.png",
-    
+
 //     "Lighting & Lamps": "https://cdn-icons-png.flaticon.com/512/1250/1250627.png",
-    
+
 //     "Storage devices": "https://cdn-icons-png.flaticon.com/512/2948/2948720.png",
-    
+
 //     "Lifestyle": "https://cdn-icons-png.flaticon.com/512/2922/2922561.png",
 //     "Self Care & Beauty": "https://cdn-icons-png.flaticon.com/512/2922/2922561.png",
 //     "Shaving machines": "https://cdn-icons-png.flaticon.com/512/4656/4656959.png",
-    
+
 //     "Holder": "https://cdn-icons-png.flaticon.com/512/4209/4209792.png",
 //     "DJI Collection": "https://cdn-icons-png.flaticon.com/512/4141/4141696.png",
 //     "Scooter": "https://cdn-icons-png.flaticon.com/512/2935/2935945.png",
-    
+
 //     "Fans & Ventilation": "https://cdn-icons-png.flaticon.com/512/2019/2019029.png",
-    
+
 //     "default": "https://cdn-icons-png.flaticon.com/512/1077/1077035.png"
 //   };
-  
+
 //   return imagesMap[slug] || imagesMap["default"];
 // };
 
@@ -162,7 +162,7 @@ export const getCategoryImage = (slug) => {
       "https://m.media-amazon.com/images/I/71QWkcCgMZL._AC_SX679_.jpg",
 
     // المنزل والمطبخ
-    "Air freshener": "https://cdn-icons-png.flaticon.com/512/3095/3095121.png",
+    // "Air freshener": "https://cdn-icons-png.flaticon.com/512/3095/3095121.png",
     "ماكينات تحضير القهوة":
       "https://www.xmart.jo/cdn/shop/collections/CM3037BS_1_1771155457-800x800.webp?v=1773372139&width=640",
     "مكانس كهربائية":
@@ -199,6 +199,6 @@ export const getCategoryImage = (slug) => {
     // صورة افتراضية
     default: "https://cdn-icons-png.flaticon.com/512/1077/1077035.png"
   };
-  
+
   return imagesMap[slug] || imagesMap["default"];
 };
