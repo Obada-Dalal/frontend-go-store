@@ -721,6 +721,17 @@ export default function OrdersManagemen() {
                                 {order.userId?.name || "غير معروف"}
                               </strong>
                               <small>{order.userId?.email}</small>
+                              <small
+                                style={{
+                                  direction: "ltr",
+                                  display: "block",
+                                  marginTop: "2px",
+                                  color: "#2c3e50",
+                                  fontWeight: "500"
+                                }}
+                              >
+                                📞 {order.userId?.phoneNumber || "غير متوفر"}
+                              </small>
                             </div>
                           </div>
                         </td>
@@ -920,6 +931,12 @@ export default function OrdersManagemen() {
                   <span className="info-label">البريد الإلكتروني:</span>
                   <span className="info-value">
                     {selectedOrder.userId?.email}
+                  </span>
+                </div>
+                <div className="info-row">
+                  <span className="info-label">رقم الهاتف:</span>
+                  <span className="info-value">
+                    {selectedOrder.userId?.phoneNumber || "غير متوفر"}
                   </span>
                 </div>
               </div>
