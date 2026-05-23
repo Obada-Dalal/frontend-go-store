@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 import { UserContext } from "../../../useContexts/UserContext";
 import { CartContext } from "../../../useContexts/CartContext";
 
-// أيقونة العين SVG
+// أيقونة العين SVG (بدون تغيير)
 const EyeIcon = ({ visible, onClick }) => (
   <span className="eye-icon" onClick={onClick}>
     {visible ? (
@@ -41,14 +41,15 @@ export default function SignIn() {
   const [inputValue, setInputValue] = useState({
     name: "",
     email: "",
-    password: ""
+    password: "",
+    phoneNumber: "" // ✅ تمت الإضافة
   });
 
   const { loginUser } = useContext(UserContext);
   const navigate = useNavigate();
   const { refreshCart } = useContext(CartContext);
 
-  // منع السكرول أثناء التحميل
+  // منع السكرول أثناء التحميل (بدون تغيير)
   useEffect(() => {
     if (loading) {
       document.body.style.overflow = "hidden";
@@ -69,7 +70,8 @@ export default function SignIn() {
       const response = await axios.post(`${API_BASE_URL}/api/register`, {
         name: inputValue.name,
         email: inputValue.email,
-        password: inputValue.password
+        password: inputValue.password,
+        phoneNumber: inputValue.phoneNumber // ✅ تمت الإضافة
       });
 
       if (response.data.user && response.data.token) {
@@ -136,7 +138,6 @@ export default function SignIn() {
     <>
       <div className="overRotate">
         <div className="continerLogIN">
-          {/* الخلفية المتحركة - 5 دوائر */}
           <div className="background-circles">
             <span></span>
             <span></span>
@@ -173,6 +174,24 @@ export default function SignIn() {
                   type="email"
                   placeholder="البريد الإلكتروني"
                   required
+                />
+              </div>
+
+              {/* ✅ حقل رقم الهاتف المضاف (إجباري، 10 أرقام) */}
+              <div className="input-wrapper">
+                <input
+                  value={inputValue.phoneNumber}
+                  onChange={(e) =>
+                    setInputValue({
+                      ...inputValue,
+                      phoneNumber: e.target.value
+                    })
+                  }
+                  type="tel"
+                  placeholder="يرجى كتابة رقم يوجد عليه واتساب للتواصل"
+                  required
+                  pattern="\d{10}"
+                  title="يجب إدخال 10 أرقام فقط (بدون مسافات أو رموز)"
                 />
               </div>
 
