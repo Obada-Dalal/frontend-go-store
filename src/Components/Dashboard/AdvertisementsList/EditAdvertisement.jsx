@@ -283,8 +283,6 @@ export default function EditAdvertisement() {
         title: ad.title,
         description: ad.description,
         images: ad.images.map((img) => img.url),
-        startDate: ad.startDate,
-        endDate: ad.endDate,
         priority: parseInt(ad.priority),
         isActive: ad.isActive,
         buttonText: ad.buttonText,

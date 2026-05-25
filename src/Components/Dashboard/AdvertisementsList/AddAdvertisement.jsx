@@ -144,8 +144,6 @@ export default function AddAdvertisement() {
         title: ad.title,
         description: ad.description,
         images: ad.images.map((img) => img.url), // روابط فقط
-        startDate: ad.startDate,
-        endDate: ad.endDate,
         priority: parseInt(ad.priority),
         isActive: ad.isActive,
         buttonText: ad.buttonText,
