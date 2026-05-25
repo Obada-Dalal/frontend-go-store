@@ -9,10 +9,6 @@ import {
   FaTrash,
   FaEye,
   FaEyeSlash,
-  FaCalendarAlt,
-  FaSort,
-  FaSortUp,
-  FaSortDown,
   FaSearch
 } from "react-icons/fa";
 import { MdPriorityHigh } from "react-icons/md";
@@ -173,14 +169,6 @@ export default function AdvertisementsList() {
     }
   };
 
-  const formatDate = (dateString) => {
-    return new Date(dateString).toLocaleDateString("ar-EG", {
-      year: "numeric",
-      month: "short",
-      day: "numeric"
-    });
-  };
-
   const getStatusBadge = (ad) => {
     const now = new Date();
     const start = new Date(ad.startDate);
@@ -271,14 +259,6 @@ export default function AdvertisementsList() {
                 )}
 
                 <div className="ad-meta">
-                  <div className="meta-item">
-                    <FaCalendarAlt />
-                    <span>من: {formatDate(ad.startDate)}</span>
-                  </div>
-                  <div className="meta-item">
-                    <FaCalendarAlt />
-                    <span>إلى: {formatDate(ad.endDate)}</span>
-                  </div>
                   <div className="meta-item">
                     <MdPriorityHigh />
                     <span>أولوية: {ad.priority}</span>

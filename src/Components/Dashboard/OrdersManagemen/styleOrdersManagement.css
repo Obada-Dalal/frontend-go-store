@@ -409,7 +409,6 @@
 }
 .action-btn.whatsapp {
   background: #25d366;
-  width: 100%;
 }
 .action-btn.whatsapp.disabled {
   opacity: 0.5;
@@ -523,15 +522,15 @@
   max-width: 800px;
   width: 100%;
   max-height: 80vh;
-  overflow-y: auto;          /* يبقى التمرير ممكّناً */
+  overflow-y: auto; /* يبقى التمرير ممكّناً */
   position: relative;
   /* padding: 10px 0px; */
   animation: slideUpFade 0.3s ease;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 
   /* إخفاء شريط التمرير */
-  scrollbar-width: none;           /* Firefox */
-  -ms-overflow-style: none;        /* Internet Explorer / Edge قديم */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer / Edge قديم */
 }
 
 /* إخفاء شريط التمرير لمتصفحات WebKit (Chrome, Safari, Opera) */
@@ -747,7 +746,8 @@
 }
 
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
   }
   50% {
@@ -910,16 +910,20 @@
 
   .modal-orders-managemen {
     padding: 15px;
+    width: 340px;
   }
 
   .modal-orders-managemen h2 {
     font-size: 1.3rem;
-    margin-left: 50px;
+    margin-right: 50px;
     padding-right: 20px;
   }
 
   .order-info-section {
     padding: 15px;
+  }
+  .action-btn.whatsapp {
+    width: 100%;
   }
 }
 

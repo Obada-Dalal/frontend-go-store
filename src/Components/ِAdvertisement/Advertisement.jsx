@@ -76,17 +76,6 @@ export default function Advertisements() {
     },
     [handleInteraction]
   );
-
-  // تنسيق التاريخ - مع useCallback
-  const formatDate = useCallback((dateString) => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString("ar-EG", {
-      year: "numeric",
-      month: "short",
-      day: "numeric"
-    });
-  }, []);
-
   // Skeleton Loader
   const renderSkeleton = useMemo(
     () => (
@@ -164,17 +153,6 @@ export default function Advertisements() {
                 <div className="slide-info">
                   <h1>{ad.title}</h1>
                   <p>{ad.description}</p>
-
-                  {/* التواريخ */}
-                  <div className="slide-dates">
-                    <span className="date-badge">
-                      <FaClock /> إلى: {formatDate(ad.endDate)}
-                    </span>
-                    <span className="date-badge">
-                      <FaClock /> من: {formatDate(ad.startDate)}
-                    </span>
-                  </div>
-
                   {/* الزر */}
                   <a
                     href="#Shop"

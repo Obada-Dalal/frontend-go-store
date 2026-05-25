@@ -837,5 +837,6 @@
   }
   .modal-overlay {
   padding: 36px;
+  justify-content: flex-end;
 }
 }
