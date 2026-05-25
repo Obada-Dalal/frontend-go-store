@@ -392,32 +392,6 @@ export default function EditAdvertisement() {
 
         {/* التاريخ والأولوية */}
         <div className="form-section">
-          <h3>📅 التاريخ والأولوية</h3>
-
-          <div className="form-row">
-            <div className="form-group">
-              <label>تاريخ البداية *</label>
-              <input
-                type="datetime-local"
-                name="startDate"
-                value={ad.startDate}
-                onChange={handleChange}
-                required
-              />
-            </div>
-
-            <div className="form-group">
-              <label>تاريخ النهاية *</label>
-              <input
-                type="datetime-local"
-                name="endDate"
-                value={ad.endDate}
-                onChange={handleChange}
-                required
-              />
-            </div>
-          </div>
-
           <div className="form-row">
             <div className="form-group">
               <label>الأولوية</label>
