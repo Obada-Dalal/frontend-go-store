@@ -835,4 +835,7 @@
   .search-box-user-mangement {
     min-width: auto;
   }
+  .modal-overlay {
+  padding: 36px;
+}
 }
