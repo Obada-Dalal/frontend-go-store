@@ -511,6 +511,9 @@
   gap: 10px;
   cursor: pointer;
 }
+.checked-img {
+  color: #5f8fa9;
+}
 
 .upload-icon {
   font-size: 3rem;
@@ -691,13 +694,13 @@
 
 /* ===== form actions ===== */
 .form-actions {
-    display: flex;
-    justify-content: flex-start;
-    gap: 15px;
-    margin-top: 30px;
-    padding: 20px 0px;
-    border-top: 1px solid var(--border-color);
-    margin-right: 20px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 15px;
+  margin-top: 30px;
+  padding: 20px 0px;
+  border-top: 1px solid var(--border-color);
+  margin-right: 20px;
 }
 
 .cancel-btn,
