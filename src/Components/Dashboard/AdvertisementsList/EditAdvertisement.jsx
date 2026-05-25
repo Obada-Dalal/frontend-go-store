@@ -20,8 +20,6 @@ export default function EditAdvertisement() {
     title: "",
     description: "",
     images: [],
-    startDate: "",
-    endDate: "",
     priority: 0,
     isActive: true,
     buttonText: "Shop Now",
@@ -49,18 +47,9 @@ export default function EditAdvertisement() {
         isUploading: false
       }));
 
-      // تحويل التواريخ إلى صيغة input datetime-local
-      const formatDateForInput = (dateString) => {
-        if (!dateString) return "";
-        const date = new Date(dateString);
-        return date.toISOString().slice(0, 16);
-      };
-
       setAd({
         ...adData,
         images: imagesObjects,
-        startDate: formatDateForInput(adData.startDate),
-        endDate: formatDateForInput(adData.endDate),
         priority: adData.priority || 0
       });
     } catch (err) {

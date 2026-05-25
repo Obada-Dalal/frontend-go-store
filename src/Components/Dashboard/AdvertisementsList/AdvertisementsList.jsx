@@ -85,11 +85,6 @@ export default function AdvertisementsList() {
       let aVal = a[sortConfig.key];
       let bVal = b[sortConfig.key];
 
-      if (sortConfig.key === "startDate" || sortConfig.key === "endDate") {
-        aVal = new Date(aVal);
-        bVal = new Date(bVal);
-      }
-
       if (aVal < bVal) return sortConfig.direction === "asc" ? -1 : 1;
       if (aVal > bVal) return sortConfig.direction === "asc" ? 1 : -1;
       return 0;
@@ -169,17 +164,6 @@ export default function AdvertisementsList() {
     }
   };
 
-  const getStatusBadge = (ad) => {
-    const now = new Date();
-    const start = new Date(ad.startDate);
-    const end = new Date(ad.endDate);
-
-    if (!ad.isActive) return { text: "معطل", class: "badge-inactive" };
-    if (now < start) return { text: "مجدول", class: "badge-scheduled" };
-    if (now > end) return { text: "منتهي", class: "badge-expired" };
-    return { text: "نشط", class: "badge-active" };
-  };
-
   if (loading) {
     return (
       <div className="ads-loading">
@@ -228,7 +212,6 @@ export default function AdvertisementsList() {
       {/* Ads Grid */}
       <div className="ads-grid">
         {filteredAds.map((ad) => {
-          const status = getStatusBadge(ad);
           return (
             <div
               key={ad._id}

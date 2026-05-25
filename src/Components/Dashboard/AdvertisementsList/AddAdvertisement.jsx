@@ -20,8 +20,6 @@ export default function AddAdvertisement() {
     title: "",
     description: "",
     images: [], // مصفوفة كائنات { url, file, isUploading }
-    startDate: "",
-    endDate: "",
     priority: 0,
     isActive: true,
     buttonText: "Shop Now",
