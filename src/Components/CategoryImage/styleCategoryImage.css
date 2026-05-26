@@ -116,7 +116,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--color-blue) 0%, var(--color-dis) 00%);
+  background: linear-gradient(
+    135deg,
+    var(--color-blue) 0%,
+    var(--color-dis) 00%
+  );
   color: var(--color-white);
   font-size: 36px;
   font-weight: bold;
@@ -124,7 +128,11 @@
 
 /* دائرة All Products */
 .all-products-circle {
-  background: linear-gradient(135deg, var(--color-blue) 0%, var(--color-dis) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-blue) 0%,
+    var(--color-dis) 100%
+  );
   font-size: 48px;
   color: var(--color-white);
 }
@@ -164,7 +172,11 @@
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
   /* box-shadow: var(--shadow-sm); */
-  background: linear-gradient(135deg, var(--color-blue) 0%, var(--color-dis) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-blue) 0%,
+    var(--color-dis) 100%
+  );
   color: var(--color-white);
 }
 
@@ -193,6 +205,48 @@
 
 .show-more-btn:hover .show-more-icon {
   transform: translateY(2px);
+}
+
+/* ===== Skeleton Loader ===== */
+.skeleton-circle {
+  pointer-events: none;
+}
+
+.skeleton-circle-icon {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: skeletonShimmer 1.5s infinite;
+  border-radius: 50%;
+}
+
+.skeleton-circle-text {
+  height: 14px;
+  width: 70%;
+  margin: 12px auto 0;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: skeletonShimmer 1.5s infinite;
+  border-radius: 4px;
+}
+
+.skeleton-count {
+  display: inline-block;
+  width: 60px;
+  height: 20px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: skeletonShimmer 1.5s infinite;
+  border-radius: 20px;
+}
+
+/* حركة الوميض */
+@keyframes skeletonShimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
 
 /* ========================================
@@ -408,7 +462,11 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, var(--color-blue) 0%, var(--color-dis) 100%);
+    background: linear-gradient(
+      135deg,
+      var(--color-blue) 0%,
+      var(--color-dis) 100%
+    );
     color: var(--color-white);
     text-decoration: none;
     border-radius: 100px;
@@ -428,10 +486,15 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(      90deg,      transparent,      rgba(255, 255, 255, 0.3),      transparent    );
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      transparent
+    );
     animation: shine 2s ease-in-out infinite;
     -webkit-animation: shine 2s ease-in-out infinite;
-}
+  }
 
   @keyframes shine {
     0% {

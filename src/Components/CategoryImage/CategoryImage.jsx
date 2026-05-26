@@ -14,17 +14,20 @@ const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
 export default function CategoryImage({ onSearchSelect }) {
   const [categories, setCategories] = useState([]);
-  const [visibleCount, setVisibleCount] = useState(9); // 5 منتجات × 3 أسطر = 15
-  const [loading, setLoading] = useState(false);
+  const [visibleCount, setVisibleCount] = useState(9);
+  const [loading, setLoading] = useState(true); // بدأنا بتحميل
   const navigate = useNavigate();
 
   useEffect(() => {
     const fetchCategories = async () => {
+      setLoading(true);
       try {
         const res = await axios.get(`${API_BASE_URL}/api/categorys`);
         setCategories(res.data);
       } catch (err) {
         console.error("Error fetching categories:", err);
+      } finally {
+        setLoading(false);
       }
     };
     fetchCategories();
@@ -62,19 +65,38 @@ export default function CategoryImage({ onSearchSelect }) {
     }, 100);
   };
 
-  // دالة عرض المزيد
   const showMoreCategories = () => {
-    setLoading(true);
-    setTimeout(() => {
-      setVisibleCount(categories.length);
-      setLoading(false);
-    }, 300);
+    setVisibleCount(categories.length);
   };
 
-  // دالة إخفاء بعض التصنيفات
   const showLessCategories = () => {
-    setVisibleCount(9); // العودة إلى 15 تصنيف
+    setVisibleCount(9);
   };
+
+  // ========== Skeleton Loader ==========
+  const renderSkeletons = () => {
+    // 10 عناصر تحاكي بطاقة "جميع المنتجات" + 9 تصنيفات
+    return Array.from({ length: 10 }).map((_, i) => (
+      <div key={i} className="category-card-circle skeleton-circle">
+        <div className="category-icon-circle skeleton-circle-icon"></div>
+        <div className="category-name-circle skeleton-circle-text"></div>
+      </div>
+    ));
+  };
+
+  // ========== حالة التحميل ==========
+  if (loading) {
+    return (
+      <div className="categories-section">
+        <div className="categories-container-grid">
+          <div className="categories-header">
+            <span className="categories-count skeleton-count"></span>
+          </div>
+          <div className="categories-grid-image">{renderSkeletons()}</div>
+        </div>
+      </div>
+    );
+  }
 
   const visibleCategories = categories.slice(0, visibleCount);
   const hasMore = visibleCount < categories.length;
@@ -131,15 +153,10 @@ export default function CategoryImage({ onSearchSelect }) {
           ))}
         </div>
 
-        {/* زر عرض المزيد / عرض أقل */}
         {hasMore && (
           <div className="show-more-container">
-            <button
-              className="show-more-btn"
-              onClick={showMoreCategories}
-              disabled={loading}
-            >
-              {loading ? "جاري التحميل..." : "عرض كل التصنيفات"}
+            <button className="show-more-btn" onClick={showMoreCategories}>
+              عرض كل التصنيفات
               <FaChevronDown className="show-more-icon" />
             </button>
           </div>

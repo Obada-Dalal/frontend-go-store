@@ -4,27 +4,29 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 
 // Icons
-import { FaLongArrowAltRight } from "react-icons/fa";
-import { FaLongArrowAltLeft } from "react-icons/fa";
+import { FaLongArrowAltRight, FaLongArrowAltLeft } from "react-icons/fa";
 
 const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
 export default function NavBar({ onSearchSelect }) {
   const categoriesRef = useRef(null);
   const [categories, setCategories] = useState([]);
+  const [loading, setLoading] = useState(true); // ✅ حالة التحميل
   const navigate = useNavigate();
 
-  // حالات جديدة للتحكم في ظهور الأزرار
   const [showLeftButton, setShowLeftButton] = useState(false);
   const [showRightButton, setShowRightButton] = useState(true);
 
   useEffect(() => {
     const fetchCategories = async () => {
+      setLoading(true);
       try {
         const res = await axios.get(`${API_BASE_URL}/api/categorys`);
         setCategories(res.data);
       } catch (err) {
         console.error("Error fetching categories:", err);
+      } finally {
+        setLoading(false);
       }
     };
     fetchCategories();
@@ -68,15 +70,10 @@ export default function NavBar({ onSearchSelect }) {
     }
   };
 
-  // دالة التعامل مع الضغط على التصنيف
   const handleCategoryClick = (e, slug) => {
-    e.preventDefault(); // منع السلوك الافتراضي
+    e.preventDefault();
     navigate(`/products/${slug}`, { state: { fromLink: true } });
-    if (onSearchSelect) {
-      onSearchSelect(null);
-    }
-
-    // التمرير السلس إلى قسم المنتجات
+    if (onSearchSelect) onSearchSelect(null);
     setTimeout(() => {
       const productsSection =
         document.getElementById("products-section") ||
@@ -90,10 +87,7 @@ export default function NavBar({ onSearchSelect }) {
   const handleAllProductsClick = (e) => {
     e.preventDefault();
     navigate("/products", { state: { fromLink: true } });
-    if (onSearchSelect) {
-      onSearchSelect(null);
-    }
-
+    if (onSearchSelect) onSearchSelect(null);
     setTimeout(() => {
       const productsSection =
         document.getElementById("products-section") ||
@@ -103,6 +97,35 @@ export default function NavBar({ onSearchSelect }) {
       }
     }, 100);
   };
+
+  // ========== Skeleton Loader ==========
+  const renderSkeletonItems = () => {
+    // 7 عناصر وهمية (عدد معقول لقائمة أفقية)
+    return Array.from({ length: 7 }).map((_, i) => (
+      <li key={i} className="MainItem">
+        <span className="skeleton-link"></span>
+      </li>
+    ));
+  };
+
+  // ========== حالة التحميل ==========
+  if (loading) {
+    return (
+      <div className="Box">
+        <div className="continer continerNavBar">
+          <div id="Home" className="Box-categories">
+            <div className="categories-container">
+              <div className="categories-wrapper">
+                <div className="Categories">
+                  <ul className="MainMenu">{renderSkeletonItems()}</ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="Box">
