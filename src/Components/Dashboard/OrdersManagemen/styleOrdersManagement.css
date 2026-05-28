@@ -915,7 +915,7 @@
 
   .modal-orders-managemen h2 {
     font-size: 1.3rem;
-    margin-right: 50px;
+    /* margin-right: 50px; */
     padding-right: 20px;
   }
 
@@ -926,7 +926,7 @@
     width: 100%;
   }
   .search-box-order input {
-  width: 95%;
+    width: 95%;
   }
 }
 

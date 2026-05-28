@@ -27,6 +27,7 @@
   font-size: 1.8rem;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 10px;
 }
 
@@ -816,7 +817,7 @@
   }
 
   .modal-content-users-management {
-    margin: 20px;
+    margin-right: 55px;
   }
 }
 
@@ -837,7 +838,7 @@
   }
   .modal-overlay {
     /* padding: 36px; */
-    padding: 0px;
+    padding: 8px;
     justify-content: flex-end;
   }
   .modal-content-users-management {
