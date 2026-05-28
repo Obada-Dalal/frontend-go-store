@@ -542,6 +542,7 @@
 
 .modal-orders-managemen.edit-modal {
   max-width: 600px;
+  padding: 10px;
 }
 
 @keyframes slideUpFade {
@@ -917,6 +918,7 @@
     font-size: 1.3rem;
     /* margin-right: 50px; */
     padding-right: 20px;
+    text-align: left;
   }
 
   .order-info-section {

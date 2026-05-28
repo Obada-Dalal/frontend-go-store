@@ -838,7 +838,7 @@
   }
   .modal-overlay {
     /* padding: 36px; */
-    padding: 8px;
+    padding: 10px;
     justify-content: flex-end;
   }
   .modal-content-users-management {
