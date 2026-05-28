@@ -836,7 +836,8 @@
     min-width: auto;
   }
   .modal-overlay {
-    padding: 36px;
+    /* padding: 36px; */
+    padding: 0px;
     justify-content: flex-end;
   }
   .modal-content-users-management {
