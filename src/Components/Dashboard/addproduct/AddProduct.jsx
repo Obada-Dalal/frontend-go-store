@@ -265,7 +265,10 @@ export default function AddProduct() {
           }
         };
 
-        await axios.delete(`${API_BASE_URL}/api/categorys/${categoryId}`, config);
+        await axios.delete(
+          `${API_BASE_URL}/api/categorys/${categoryId}`,
+          config
+        );
 
         setCategories((prev) => prev.filter((cat) => cat._id !== categoryId));
 
@@ -1198,7 +1201,7 @@ export default function AddProduct() {
               <div className="image-upload-area">
                 <label htmlFor="image-upload" className="upload-label">
                   <FaImage className="upload-icon" />
-                  <span>اختر صوراً للمنتج</span>
+                  <span className="checked-img">اختر صوراً للمنتج</span>
                   <span className="upload-hint">(يمكنك اختيار عدة صور)</span>
                 </label>
                 <input

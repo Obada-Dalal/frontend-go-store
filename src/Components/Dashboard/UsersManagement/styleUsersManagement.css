@@ -260,7 +260,7 @@
   justify-content: center;
   transition: color 0.3s ease;
   top: 8px;
-    position: absolute;
+  position: absolute;
 }
 
 .clear-search:hover {
@@ -836,7 +836,10 @@
     min-width: auto;
   }
   .modal-overlay {
-  padding: 36px;
-  justify-content: flex-end;
-}
+    padding: 36px;
+    justify-content: flex-end;
+  }
+  .modal-content-users-management {
+    margin-right: 60px;
+  }
 }

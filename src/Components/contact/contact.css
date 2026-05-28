@@ -116,7 +116,11 @@
 .box-content:hover .icon {
   transform: scale(1.05) rotate(3deg);
   box-shadow: var(--shadow-hover);
-  background: linear-gradient(135deg, var(--color-blue) 0%, var(--color-dis) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-blue) 0%,
+    var(--color-dis) 100%
+  );
 }
 
 .react-icon {
@@ -132,7 +136,7 @@
 /* ===== نصوص معلومات التواصل ===== */
 .box-content .text {
   flex: 1;
-  color:#6c757d;
+  color: #6c757d;
 }
 
 .box-content .text p:first-child {
@@ -186,7 +190,11 @@
   color: var(--color-white);
   font-size: 14px;
   font-weight: 500;
-  background: linear-gradient(135deg, var(--color-blue) 0%, var(--color-dis) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-blue) 0%,
+    var(--color-dis) 100%
+  );
   padding: 8px 20px;
   border-radius: 50px;
   display: inline-block;
@@ -235,6 +243,7 @@
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
+  direction: rtl;
 }
 
 .form:hover {
@@ -298,7 +307,11 @@
 /* ===== زر الإرسال مع تأثير Shine ===== */
 .form form .button button {
   width: 100%;
-  background: linear-gradient(135deg, var(--color-blue) 0%, var(--color-dis) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-blue) 0%,
+    var(--color-dis) 100%
+  );
   border: none;
   font-size: 16px;
   color: var(--color-white);

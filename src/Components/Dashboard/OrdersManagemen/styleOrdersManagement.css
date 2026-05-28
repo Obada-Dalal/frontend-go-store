@@ -925,6 +925,9 @@
   .action-btn.whatsapp {
     width: 100%;
   }
+  .search-box-order input {
+  width: 95%;
+  }
 }
 
 /* Landscape mode */

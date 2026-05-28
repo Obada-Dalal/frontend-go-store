@@ -415,7 +415,7 @@ export default function EditAdvertisement() {
           <div className="image-upload-area">
             <label htmlFor="image-upload" className="upload-label">
               <FaImage className="upload-icon" />
-              <span>اختر صور الإعلان</span>
+              <span className="checked-img">اختر صور الإعلان</span>
               <span className="upload-hint">(يمكنك اختيار عدة صور)</span>
             </label>
             <input

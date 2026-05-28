@@ -82,7 +82,7 @@ export default function Contact() {
         <div className="contact">
           <div className="social" data-aos="fade-right">
             <div className="content">
-              <h3>Let's Connect</h3>
+              <h3>للتواصل</h3>
 
               {/* Phone */}
               <div className="box-content">
@@ -136,10 +136,10 @@ export default function Contact() {
           </div>
 
           <div className="form" data-aos="fade-left">
-            <h3>Send Message</h3>
+            <h3>ارسال رسالة </h3>
 
             <form onSubmit={handleSubmit}>
-              <label htmlFor="name">Full Name</label>
+              <label htmlFor="name">الاسم الكامل </label>
               <input
                 type="text"
                 id="name"
@@ -154,7 +154,7 @@ export default function Contact() {
                 errors={state.errors}
               />
 
-              <label htmlFor="email">Email Address</label>
+              <label htmlFor="email">البريد الالكتروني </label>
               <input
                 type="email"
                 id="email"
@@ -169,7 +169,7 @@ export default function Contact() {
                 errors={state.errors}
               />
 
-              <label htmlFor="message">Message</label>
+              <label htmlFor="message">نص الرسالة </label>
               <textarea
                 rows="5"
                 id="message"
@@ -186,7 +186,7 @@ export default function Contact() {
 
               <div className="button">
                 <button type="submit" disabled={state.submitting}>
-                  <FiMail style={{marginRight:"10px"}} className="btn-icon" />
+                  <FiMail style={{ marginLeft: "10px" }} className="btn-icon" />
                   {state.submitting ? "جاري الإرسال..." : "إرسال الرسالة"}
                 </button>
               </div>

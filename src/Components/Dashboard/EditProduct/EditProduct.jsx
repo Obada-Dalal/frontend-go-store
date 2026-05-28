@@ -833,7 +833,7 @@ export default function EditProduct({
               <div className="image-upload-area">
                 <label htmlFor="image-upload" className="upload-label">
                   <FaImage className="upload-icon" />
-                  <span>اختر صوراً للمنتج</span>
+                  <span className="checked-img">اختر صوراً للمنتج</span>
                   <span className="upload-hint">(يمكنك اختيار عدة صور)</span>
                 </label>
                 <input
