@@ -59,7 +59,7 @@ export default function Footer({ onSearchSelect }) {
             >
               <FaInstagram />
             </a>
-            <a
+            {/* <a
               href="#"
               className="social-icon facebook"
               aria-label="Facebook"
@@ -67,7 +67,7 @@ export default function Footer({ onSearchSelect }) {
               rel="noopener noreferrer"
             >
               <FaFacebook />
-            </a>
+            </a> */}
             <a
               href="https://wa.me/963947584270?text=مرحباً%20،%20لدي%20استفسار%20عن%20المنتجات"
               className="social-icon whatsapp"
