@@ -198,7 +198,7 @@ export const getCategoryImage = (slug) => {
 
     // ادوات تخييم
     "ادوات تخييم":
-      "https://cdn.salla.sa/XaeeA/a021cd87-f362-49ba-9332-10d8dc800ee4-1000x661.56615661566-FE2YS9y7mdFWyG9Wut7Ukm202XDiLzxGzvCosTMc.png",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLu70ReP-bFT3ukx10R3pvZj4Vumas5sc8C6Z0Zhx4eg&s=10",
     // صورة افتراضية
     default: "https://cdn-icons-png.flaticon.com/512/1077/1077035.png"
   };
