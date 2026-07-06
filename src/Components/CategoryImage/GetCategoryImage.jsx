@@ -196,6 +196,9 @@ export const getCategoryImage = (slug) => {
     "مراوح وتهوية":
       "https://i5.walmartimages.com/asr/fe12dafc-30fa-4446-a181-b1628dbc28ea.f32a4beb719347ff97ff4086ab7463cd.jpeg",
 
+    // ادوات تخييم
+    "ادوات تخييم":
+      "https://cdn.salla.sa/XaeeA/a021cd87-f362-49ba-9332-10d8dc800ee4-1000x661.56615661566-FE2YS9y7mdFWyG9Wut7Ukm202XDiLzxGzvCosTMc.png",
     // صورة افتراضية
     default: "https://cdn-icons-png.flaticon.com/512/1077/1077035.png"
   };
